@@ -1,0 +1,78 @@
+#Add for record engineermode test result
+on boot
+    symlink /mnt/vendor/persist /storage/persist
+
+on post-fs-data
+    mkdir /data/engineermode
+    chown system system /data/engineermode
+    chmod 0775 /data/engineermode
+    mkdir /data/engineercamera
+    chown cameraserver system /data/engineercamera
+    chmod 0777 /data/engineercamera
+    mkdir /data/theme_bak
+    chown system system /data/theme_bak
+    chmod 0777 /data/theme_bak
+    chown system system /cache/factory/sbl_memtest_result.txt
+    chown system system /cache/factory/dram_aging_user_result.txt
+    chown system system /cache/factory/flash_aging_result.txt
+
+service switchByMC /system/bin/sh /system/system_ext/bin/engineer_system_shell.sh switchEng
+    user root
+    group root system
+    disabled
+    oneshot
+    seclabel u:r:engineer_system_daemon:s0
+
+on property:vendor.oplus.engineer.adb.flag=*
+    start switchByMC
+
+on property:persist.vendor.otg.switch=true
+    write /sys/class/power_supply/usb/otg_switch 1
+    write /sys/class/oplus_chg/usb/otg_switch 1
+
+on property:persist.vendor.otg.switch=false
+    write /sys/class/power_supply/usb/otg_switch 0
+    write /sys/class/oplus_chg/usb/otg_switch 0
+
+on property:vendor.oplus.engineer.usb.config=*
+    setprop persist.vendor.usb.config ${vendor.oplus.engineer.usb.config}
+    setprop persist.sys.usb.config ${vendor.oplus.engineer.usb.config}
+
+service AccessCpuInfo /system/bin/sh /system/system_ext/bin/engineer_system_shell.sh accessCpuInfo
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:engineer_system_daemon:s0
+
+### atm support ###
+on property:ro.boot.atm=enable
+    write /sys/class/oplus_chg/battery/stop_charging_enable 0
+    setprop sys.boot.atm enable
+    setprop persist.sys.allcommode true
+    setprop persist.sys.oplus.usbactive true
+    setprop persist.sys.adb.engineermode 0
+
+on property:sys.usb.config.meta=false
+    write /sys/class/oplus_chg/battery/stop_charging_enable 1
+
+### atm support ###
+
+#Add for sync panic and mtk log switch
+on property:vendor.MB.running=1
+    #Linghong.Zeng@PSW.NW.IMS.1934070,2019/04/08, add for mtk log switch
+    setprop persist.vendor.log.tel_dbg true
+
+on property:vendor.MB.running=0
+    #Linghong.Zeng@PSW.NW.IMS.1934070,2019/04/08, add for mtk log switch
+    setprop persist.vendor.log.tel_dbg false
+
+on property:vendor.oplus.vulkan.switch=*
+    setprop persist.graphics.vulkan.disable ${vendor.oplus.vulkan.switch}
+
+#Add for set media.stagefright.audio.deep(default_prop) in mmi speaker test
+on property:sys.media.stagefright.audio.deep=true
+    setprop media.stagefright.audio.deep true
+
+on property:sys.media.stagefright.audio.deep=false
+    setprop media.stagefright.audio.deep false

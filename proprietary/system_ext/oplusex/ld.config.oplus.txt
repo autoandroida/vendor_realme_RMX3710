@@ -1,0 +1,16 @@
+# install at "/system_ext/oplusex/" dir
+[system]
+#support load priority,higher -> low
+paths = /my_company/${LIB}/oplusex
+paths += /my_carrier/${LIB}/oplusex
+paths += /my_region/${LIB}/oplusex
+paths += /my_product/${LIB}/oplusex
+paths += /system_ext/${LIB}/oplusex
+paths += /system/${LIB}/oplusex
+
+default.shared_libs = %/system/etc/public.libraries.txt%:%/apex/com.android.vndk.v${VER}/etc/llndk.libraries.${VER}.txt%:%/system_ext/oplusex/public.libraries-oplusex.txt%
+vndk.shared_libs = %/apex/com.android.vndk.v${VER}/etc/vndksp.libraries.${VER}.txt%
+sphal.shared_libs = %/vendor/etc/public.libraries.txt%
+
+[vendor]
+# library of oplus extend install at the path which default space of vendor driver can find.

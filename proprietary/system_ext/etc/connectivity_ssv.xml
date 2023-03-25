@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- All detail configuration has moved to my carrier for componentization 3.0 -->
+<!-- connecitivity ssv configuration format will follow as below show -->
+<!-- basic switch can choose one of status in "DEFAULT","ON" or "OFF"  -->
+<ConnectivityConfig>
+    <WIFI>DEFAULT</WIFI>
+    <BLUETOOTH>DEFAULT</BLUETOOTH>
+    <NFC>DEFAULT</NFC>
+    <GPS>DEFAULT</GPS>
+    <WIFI_TETHERING>DEFAULT</WIFI_TETHERING>
+    <BLUETOOTH_TETHERING>DEFAULT</BLUETOOTH_TETHERING>
+    <WIFI_SCANNING>DEFAULT</WIFI_SCANNING>
+</ConnectivityConfig>

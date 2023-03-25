@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filter-conf>
+    <version>20210406</version>
+    <filter-name>sys_stability_binder_config</filter-name>
+    <period>1000</period>
+    <switch>true</switch>
+    <DumpSwitch>false</DumpSwitch>
+</filter-conf>

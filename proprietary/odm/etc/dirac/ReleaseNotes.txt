@@ -1,0 +1,19 @@
+230103 Miami_v06
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；12月30号调试的v06版参数
+
+221229 Miami_v05
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；12月29号调试的v05版参数
+
+221222 Miami_v04
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；12月22号调试的v04版参数
+
+221220 Miami_v03
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；12月19号调试的v03版参数
+
+221219 Miami_v02
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；12月17号调试的v02版参数
+
+221130 Miami_v01
+diracmobile.config：Dirac正式版调音文件，适配Dirac 3.0；11月29号调试的初版参数
+interfacedb：meta parameter文件，适配Dirac 3.0集成和v01的config文件
+diracvdd.bin：耳机HDSound filter，与Balde项目一致

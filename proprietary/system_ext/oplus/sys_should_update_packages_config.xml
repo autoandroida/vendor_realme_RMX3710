@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oplus-config>
+  <!-- Add for updated Preinstalled apk OTA check when cross OS upgraded-->
+  <packages packageName="com.oneplus.card" />
+  <namechangedpackages oldPackageName="com.oneplus.tws" newPackageName="com.oplus.melody" />
+  <namechangedpackages oldPackageName="com.oneplus.note" newPackageName="com.coloros.note" />
+  <namechangedpackages oldPackageName="com.oneplus.gamespace" newPackageName="com.oplus.games" />
+  <namechangedpackages oldPackageName="com.oneplus.backuprestore" newPackageName="com.coloros.backuprestore" />
+  <namechangedpackages oldPackageName="net.oneplus.weather" newPackageName="com.coloros.weather2" />
+  <namechangedpackages oldPackageName="cn.oneplus.wallet" newPackageName="com.oneplus.card" />
+  <namechangedpackages oldPackageName="com.oneplus.soundrecorder" newPackageName="com.coloros.soundrecorder" />
+  <namechangedpackages oldPackageName="com.oneplus.calculator" newPackageName="com.coloros.calculator" />
+  <namechangedpackages oldPackageName="com.oneplus.bbs" newPackageName="com.oppo.community" />
+</oplus-config>

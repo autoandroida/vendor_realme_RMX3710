@@ -1,0 +1,7 @@
+on post-fs-data
+    chmod 0666 /mnt/vendor/persist/data/ec2_aging_data.txt
+
+service vendor.misc-1-0  /odm/bin/hw/vendor.oplus.hardware.misc@1.0-service
+    class hal
+    user system
+    group system

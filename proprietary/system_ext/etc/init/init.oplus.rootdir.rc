@@ -1,0 +1,530 @@
+#/********************************************************************************
+# ** Copyright (C), 2018-2023, OPLUS Mobile Comm Corp., Ltd
+# ** OPLUS_FEATURE_STORAGE_MOUNT, All rights reserved.
+# **
+# ** File: - init.oplus.rootdir.rc
+# ** Description:
+# **     Euclid : oplus custumize for init.oplus.rootdir.rc
+# **
+# ** Version: 1.0
+# ** Date: 2019-06-05
+# ** Author: Xuefeng.Peng@ANDROID.STORAGE
+# **
+# ** ------------------------------- Revision History: ----------------------------
+# ** <author>                        <data>       <version>   <desc>
+# ** ------------------------------------------------------------------------------
+#** Xuefeng.Peng@ANDROID.STORAGE.0      2019-06-05   1.0         Create this moudle
+#********************************************************************************/
+#Ping.Liu@BSP.Fingerprint.Secure 2019/10/24, Add for secure common rc.
+import /odm/init.oplus.seccommon.rc
+#qian.chen@BSP.Fingerprint.Face 2020/05/08, Add for face rc.
+import /odm/init.oplus.face.rc
+
+#AnbaoShao@camera 2022/09/06 add for algorithm
+#Create an algorithm process to handle one-time events related to the algorithm and platform,
+#and solve the problem of abnormal algorithm function caused by the upgrade.
+import /odm/etc/init/occe_create.rc
+
+#ifdef OPLUS_FEATURE_SENSOR
+#xiebaixue@PSW.BSP.SENSOR, 2021/03/26,add for sensor scp ramdump
+service oplus_sensor_fb /odm/bin/oplus_sensor_fb
+    class main
+    user system
+    group system
+    disabled
+
+on property:persist.sys.enable_mtk_scp_dump=1
+    mkdir /data/vendor/mmdump/scp 0777 system system
+    mkdir /data/persist_log/DCS/en/mm_logs/ramdump/scp 0777 system system
+    start oplus_sensor_fb
+#endif /* OPLUS_FEATURE_SENSOR */
+
+#ifdef OPLUS_FEATURE_EXPLORER
+#Zhoulei@Camera.Explorer 2021/06/25, add explorer
+import /odm/etc/init/hw/init.explorer.rc
+#endif /* OPLUS_FEATURE_EXPLORER */
+
+#ifdef OPLUS_FEATURE_VIDEOLOGKIT
+#CaiBo@MM.MSERVER.PLAYER, 2021/09/18, Add for : init.oplus.video.rc
+import /odm/etc/init/hw/init.oplus.video.rc
+#endif /*OPLUS_FEATURE_VIDEOLOGKIT*/
+
+#Braden.Liu@System, 2022/03/07, add for init.oem.carrier.rc
+import /mnt/vendor/my_bigball/etc/init/hw/init.oem.carrier.rc
+
+on zygote-start && property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    #Xuefeng.Peng@ANDROID.STORAGE.1596362, 2018/11/30, add for FBE
+    start bspFwUpdate
+
+on property:sys.boot_completed=1
+    #Xuefeng.Peng@ANDROID.STORAGE.1410703, 2018/06/19, Add for support NDIS 5.0
+    write /config/usb_gadget/g1/functions/gsi.rndis/rndis_class_id 1
+    #ifdef OPLUS_THERMAL_CONTROL
+    #Kun.Zhou@ANDROID.POWER, 2020/06/03, Modify for thermal control
+    chown system system /sys/class/thermal/cooling_device18/cur_state
+    #endif /* OPLUS_THERMAL_CONTROL */
+
+#ifdef OPLUS_FEATURE_RECORD_MDMLOG
+#Shuhang.Hua@ANDROID.CUSTOMIZE,2021.06.21,Add for record mdm log custom api
+on property:persist.sys.custom.record_log=true
+    mkdir /data/misc/gjdw 0777 root system
+    mkdir /dev/log  0755 system system
+    symlink /data/misc/gjdw/mdm /dev/log/mdm
+    chmod 0666 /data/misc/gjdw/mdm
+    chown system system /data/misc/gjdw/mdm
+#endif /* OPLUS_FEATURE_RECORD_MDMLOG */
+
+on post-fs-data
+    #Jiemin.Zhu@PSW.Android.SELinux, 2017/12/12, create recycle for DCIM before restorecon
+    mkdir /data/.recycle 0770 media_rw media_rw
+    #Jiemin.Zhu@PSW.Android.SELinux, 2018/08/06, Add for skip /data/oplus_lib for chcon exec_type
+    mkdir /data/oplus_lib 0777 root root
+    # sam.li@ANDROID.UPDATABILITY,add for update engine log
+    mkdir /mnt/vendor/oplusreserve/update_engine_log 02750 root log
+    # duxiaodong@ANDROID.UPDATABILITY, 2022/5/24, add for ota log feedback
+    mkdir /data/misc/oplus_update_engine_log 02755 root log
+
+    #ifdef /* OPLUS_FEATURE_FONT_FLIP */
+    #JiFeng.Tan@ANDROID.UIFramework, 2020-04-24 : Add for webview flipfont
+    mkdir /data/format_unclear/font 0777 system system
+    chmod 0777 /data/format_unclear/font
+    symlink /system/fonts/Roboto-Thin.ttf /data/format_unclear/font/OplusOSUI-Thin.ttf
+    symlink /system/fonts/Roboto-ThinItalic.ttf /data/format_unclear/font/OplusOSUI-ThinItalic.ttf
+    symlink /system/fonts/Roboto-Light.ttf /data/format_unclear/font/OplusOSUI-Light.ttf
+    symlink /system/fonts/Roboto-LightItalic.ttf /data/format_unclear/font/OplusOSUI-LightItalic.ttf
+    symlink /system/fonts/Roboto-Regular.ttf /data/format_unclear/font/OplusOSUI-Regular.ttf
+    symlink /system/fonts/Roboto-Italic.ttf /data/format_unclear/font/OplusOSUI-Italic.ttf
+    symlink /system/fonts/Roboto-Medium.ttf /data/format_unclear/font/OplusOSUI-Medium.ttf
+    symlink /system/fonts/Roboto-MediumItalic.ttf /data/format_unclear/font/OplusOSUI-MediumItalic.ttf
+    symlink /system/fonts/Roboto-Black.ttf /data/format_unclear/font/OplusOSUI-Black.ttf
+    symlink /system/fonts/RobotoStatic-Regular.ttf /data/format_unclear/font/OplusOSUI-Static-Regualr.ttf
+    symlink /system/fonts/Roboto-Bold.ttf /data/format_unclear/font/OplusOSUI-Bold.ttf
+    symlink /system/fonts/Roboto-BoldItalic.ttf /data/format_unclear/font/OplusOSUI-BoldItalic.ttf
+    symlink /system/fonts/OplusOSUI-XThin.ttf /data/format_unclear/font/OplusOSUI-Myanmar.ttf
+
+    #endif /* OPLUS_FEATURE_FONT_FLIP */
+
+    #ifdef OPLUS_FEATURE_CAMERA_COMMON
+    #Feiping.Li@CAMERA.DRV, 20201209, add for camera dualcalibration data
+    chown cameraserver cameraserver /mnt/vendor/persist/camera/dual_calibration/stereoParams.bin
+    chown cameraserver cameraserver /mnt/vendor/persist/camera/front_dual_calibration/stereoParams.bin
+    chmod 0666 /mnt/vendor/persist/camera/dual_calibration/stereoParams.bin
+    chmod 0666 /mnt/vendor/persist/camera/front_dual_calibration/stereoParams.bin
+    chown cameraserver cameraserver /mnt/vendor/persist/camera/spectrum_cali_data
+    chown cameraserver cameraserver /mnt/vendor/persist/camera/spectrum_test_data
+    chmod 0666 /mnt/vendor/persist/camera/spectrum_cali_data
+    chmod 0666 /mnt/vendor/persist/camera/spectrum_test_data
+    #endif /* OPLUS_FEATURE_CAMERA_COMMON*/
+
+#ifdef OPLUS_FEATURE_COTA_MOUNT
+#Sunshaojie@ANDROID.CUSTOMIZE, 2019/12/08, add for init rw above devices  while in dm-verity process
+on post-fs-data
+    #for cota dm
+    mkdir /data/cota 0770 root cache
+    restorecon /data/cota
+    mkdir /data/cota/slot_a 0770 root cache
+    mkdir /data/cota/slot_b 0770 root cache
+    mkdir /mnt/cota 0770 root cache
+    mkdir /mnt/cota/slot_a 0770 root cache
+    mkdir /mnt/cota/slot_b 0770 root cache
+    start cotad-boot
+    load_prop_from_cota check_mount
+
+    #ifdef OPLUS_FEATURE_SSR
+    #Zhao.Pan@MULTIMEDIA.AUDIODRIVER.FEATURE.SSR, 2020/06/17,add for adsp ramdump
+    mkdir /data/vendor/mmdump 0777 system system
+    chmod 0777 /data/vendor/mmdump
+    mkdir /data/vendor/mmdump/adsp 0777 system system
+    chmod 0777 /data/vendor/mmdump/adsp
+    #endif /* OPLUS_FEATURE_SSR */
+    #ifdef OPLUS_FEATURE_MM_FEEDBACK
+    #Zhao.Pan@MULTIMEDIA.AUDIODRIVER.HAL, 2020/08/25, Add for audio hal feedback
+    chown media media /proc/mm_fb
+    #endif /* OPLUS_FEATURE_MM_FEEDBACK */
+
+on property:sys.cotaimg.verify=1000
+    #for cota dm
+    mkdir /data/cota 0770 root cache
+    restorecon /data/cota
+    verify_mount_cota_img reboot
+
+on property:sys.cotaimg.verify=1001
+    #for cota dm
+    mkdir /data/cota 0770 root cache
+    restorecon /data/cota
+    verify_mount_cota_img immediately
+
+on property:sys.cota.bind.load.properties=*
+    load_prop_from_cota ${sys.cota.bind.load.properties}
+#endif OPLUS_FEATURE_COTA_MOUNT
+
+
+#ifdef OPLUS_BUG_STABILITY
+#Wen.Luo@BSP.Kernel.Stability, 2020/04/11, enable Death Healer
+on late-init
+    write /proc/sys/kernel/hung_task_timeout_secs 60
+    write /proc/sys/kernel/hung_task_selective_monitoring 0
+#endif
+
+#ifdef OPLUS_FEATURE_APPDATA_SERVICE
+#LiSongting@ANDROID.FRAMEWORK 2020.5.11 Add for BackupRestore
+service oplus_app_data /system/system_ext/bin/oplus_app_data
+    user root
+    group root system
+    oneshot
+
+on property:oplus.appdataservice.status=1
+    start oplus_app_data
+
+on property:oplus.appdataservice.status=0
+    stop oplus_app_data
+#endif /* OPLUS_FEATURE_APPDATA_SERVICE */
+
+#ifdef OPLUS_FEATURE_RECOVERY_BOOT_REASON
+# sam.li@ANDROID.UPDATABILITY, 2021/01/09, Add for recovery boot reason
+on property:oem.rbr.log.clean=1
+    rm /cache/rbr_log/last_system_boot_failed.log
+    rm /cache/rbr_log/last_init_boot_failed.log
+    rm /cache/rbr_log/dmesg.log
+    rm /cache/rbr_log/android.log
+    rm /mnt/vendor/oplusreserve/rbr_log/last_init_boot_failed.log
+    rm /rbr/rbr_log/last_system_boot_failed.log
+    rm /rbr/rbr_log/last_init_boot_failed.log
+    rm /rbr/rbr_log/dmesg.log
+    rm /rbr/rbr_log/android.log
+    setprop oem.rbr.log.clean 0
+#endif /* OPLUS_FEATURE_RECOVERY_BOOT_REASON */
+
+on boot
+    #ifdef OPLUS_FEATURE_OF2FS
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/dpolicy_expect
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/fsync_protect
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    #Weichao.Guo@BSP.Kernel.FS, 2021/06/01, Add for oF2FS 2.x performance tuning
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/min_ssr_sections 722
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/min_fsync_blocks 20
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/ipu_policy 56
+
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_max_sleep_time
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_min_sleep_time
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_urgent
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/discard_granularity
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/iostat_enable
+
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_max_sleep_time
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_min_sleep_time
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_urgent
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/discard_granularity
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/iostat_enable
+#Weichao.Guo@BSP.Kernel.FS,2020/12/01, Add for reserve space
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    chown root system /sys/fs/ext4/${dev.mnt.blk.userdata}/reserved_clusters
+    chmod 0660 /sys/fs/ext4/${dev.mnt.blk.userdata}/reserved_clusters
+    #endif OPLUS_FEATURE_OF2FS
+
+on post-fs-data
+    #ifdef /* OPLUS_FEATURE_THEME_FR */
+    #HongWu.Yang@ANDROID.UIFramework, 2020-04-24, add for rom theme
+    mkdir /data/theme 0777 system system
+    chmod 0777 /data/theme
+    #used for themespace store to judge whether need themespace lib.
+    setprop is_can_remove_themespacelib 1
+    #endif  /* OPLUS_FEATURE_THEME_FR */
+
+    #ifdef /* OPLUS_FEATURE_COLOR_UXICON */
+    #Qiu.Yu@ANDROID.UIFramework, 2020-04-24, Add for uxicons
+    mkdir /data/oplus/uxicons 0777 system system
+    chmod 0777 /data/oplus/uxicons
+    #endif /* OPLUS_FEATURE_COLOR_UXICON */
+
+    #ifdef  #ifdef /* OPLUS_FEATURE_UXICON */
+    #Ke.Xu@ANDROID.UIFramework, 2020-05-22, Add for uxicons
+    mkdir /data/oplus/uxres 0777 system system
+    chmod 0777 /data/oplus/uxres
+    #endif /* OPLUS_FEATURE_UXICON */
+
+    #ifdef /* OPLUS_FEATURE_LANGUAGE_OVERLAY */
+    #Di.An@ANDROID.UIFramework, 2020-04-24, Add for language
+    mkdir /data/oplus/language 0777 system system
+    chmod 0777 /data/oplus/language
+    #endif /* OPLUS_FEATURE_LANGUAGE_OVERLAY */
+
+    #Linjie.Xu@PSW.AD,2017.10.27:add for powermonitor app to access the system data file. etc
+    mkdir /data/oplus/psw/ 0777 system system
+    mkdir /data/oplus/psw/powermonitor/ 0777 system system
+    mkdir /data/oplus/psw/powermonitor_backup/ 0777 system system
+    mkdir /data/oplus/log/DCS/en/dcs 0777 system system
+    mkdir /data/oplus/psw/thermal 0777 system system
+    mkdir /data/oplus/log/DCS/de/thermal 0777 system system
+    mkdir /data/oplus/log/DCS/en/thermal 0777 system system
+    #Wenlong.He@PSW.BSP.POWER,2021.01.27 , add for use powermonitor app to access the system data file in OS 11.3 
+    mkdir /data/persist_log/DCS/de/powermonitor 0777 system system
+    mkdir /data/persist_log/DCS/en/powermonitor 0777 system system
+
+    #ifdef OPLUS_FEATURE_MIDAS
+    #hongchengwen@BSP,2022/05/03,Add for midas
+    mkdir /data/misc/midas 0770 system system
+    #endif /* OPLUS_FEATURE_MIDAS */
+
+   #ifdef /* OPLUS_FEATURE_FONT_FLIP */
+   #JiFeng.Tan@ANDROID.UIFramework, 2020-04-24 : Add for webview flipfont
+   mkdir /data/format_unclear/font 0777 system system
+   chmod 0777 /data/format_unclear/font
+   symlink /system/fonts/OplusOSUI-XThin.ttf /data/format_unclear/font/OplusOSUI-Myanmar.ttf
+   symlink /system/fonts/Roboto-Regular.ttf /data/format_unclear/font/OplusOSUI-Regular.ttf
+   #endif /* OPLUS_FEATURE_FONT_FLIP */
+
+    #ifdef OPLUS_FEATURE_WIFI_CONNECTFAILED
+    mkdir /data/persist_log/DCS/de/network_logs 0777 system system
+    mkdir /data/persist_log/DCS/de/network_logs/wifi 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/wifi 0777 system system
+    #endif /* OPLUS_FEATURE_WIFI_CONNECTFAILED */
+
+    #ifndef OPLUS_FEATURE_WIFI_MINIDUMP
+    ##Huitao@CONNECTIVITY.WiFi.HARDWARE.MINIDUMP.2928304 20220517
+    #Add for: modify wifidump qcom minidump path for logkit4.0
+    mkdir /data/misc/wifi/wifidump 0777 system system
+    #  eap mtk minidump
+    mkdir /data/persist_log/DCS/de/network_logs/stp_dump 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/stp_dump 0777 system system
+    mkdir /data/persist_log/DCS/de/network_logs/stp_dump/wifi 0777 system system
+
+    #  eap qcom minidump
+    mkdir /data/persist_log/DCS/de/network_logs/wifi_dump 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/wifi_dump 0777 system system
+    mkdir /data/persist_log/DCS/de/network_logs/wifi_dump/wifi 0777 system system
+
+    #  eap wifiSwitch
+    mkdir /data/persist_log/DCS/de/network_logs/wifiSwitch 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/wifiSwitch 0777 system system
+    #endif /* OPLUS_FEATURE_WIFI_MINIDUMP */
+
+    #Liangxiang.Liu@AD.Power.PowerMonitor, 2018/02/08, Add for wakeup_stastisc reset
+    chown system system /sys/kernel/wakelock_profiler/wakeup_stastisc_reset
+    chown system system /sys/kernel/wakelock_profiler/active_max
+    chown system system /sys/kernel/wakelock_profiler/kernel_time
+    chmod 0664 /sys/kernel/wakelock_profiler/wakeup_stastisc_reset
+    chmod 0664 /sys/kernel/wakelock_profiler/active_max
+    chmod 0664 /sys/kernel/wakelock_profiler/kernel_time
+
+   #ifdef OPLUS_FEATURE_THIRDPARTS
+    #qiukangwen@ANDROID.BUILD, 2021/05/14, Add for thirdparts appchannel
+    mkdir /data/etc 0771 system system encryption=None
+    mkdir /data/etc/appchannel 0775 system system encryption=None
+    #endif /* OPLUS_FEATURE_THIRDPARTS */
+
+#ifdef OPLUS_FEATURE_PERFORMANCE
+    #WangMin@ANDROID.RESCONTROL, 2019/06/10, Add for oppo heapdump
+    mkdir /data/oplus/heapdump/ 0700 system system
+
+#endif /* OPLUS_FEATURE_PERFORMANCE */
+
+    #ifdef OPLUS_FEATURE_LOG_COLLECTION
+    #ZhengZhou@CN.NFC.Basic.Log.2948804, 2020/05/20, Add for nfc log
+    mkdir /data/persist_log/DCS/en/nfc 0777 system system
+    mkdir /data/persist_log/DCS/de/nfc 0777 system system
+    #endif /* OPLUS_FEATURE_LOG_COLLECTION */
+
+    #ifdef OPLUS_FEATURE_LOG_FEEDBACK
+    # duxiaodong@ANDROID.UPDATABILITY, 2022/5/24, add for ota log feedback
+    mkdir /data/persist_log/DCS/en/vab_log 0777 system system
+    mkdir /data/persist_log/DCS/de/vab_log 0777 system system
+    #endif OPLUS_FEATURE_LOG_FEEDBACK
+
+#Liangwen.Ke@PSW.CN.BT.Basic.Customize.2120948, 2019/06/26,
+#Add for supporting QC firmware update by sau_res
+on post-fs-data
+#Avinash.Pandey@PSW.CN.BT.Basic.Customize.ALM-530653, 2020/10/28,
+#change permission of /data/vendor for supporting QC firmware update by sau_res for non NFC models
+    chmod 0777 /data/vendor
+    chmod 0777 /data/vendor/bluetooth
+    mkdir /data/vendor/bluetooth/fw 0777 bluetooth bluetooth
+
+on init
+    #Jiemin.Zhu@PSW.Android.SdardFs, 2017/12/12, Add for sdcardfs delete dcim record
+    chown root system /proc/fs/sdcardfs/skipd_delete
+    chmod 0664 /proc/fs/sdcardfs/skipd_delete
+    chown root system /sys/module/sdcardfs/parameters/skipd_enable
+    chmod 0664 /sys/module/sdcardfs/parameters/skipd_enable
+    chown root system /sys/module/sdcardfs/parameters/extra_enable
+    chmod 0664 /sys/module/sdcardfs/parameters/extra_enable
+
+on boot
+    #Yilong.Wei@PSW.NW.RF.1178789, 2017/12/11
+    #add for Screen MIPI frequency interference GSM reception
+    chmod 0664  /sys/kernel/oplus_display/panel/dynamic_dsi_clock
+    chown radio root  /sys/kernel/oplus_display/panel/dynamic_dsi_clock
+#Le.Li@SWDP.MM.Audio.SmartPa, 2018/12/08, Add for smartPa calibrate
+    mkdir /mnt/vendor/persist/media 0775 media media
+	
+    #ifdef OPLUS_FEATURE_POWER_MONITOR
+    #yunqing.zeng@bsp.power.basic 2019/12/30 add for save modem sleep info to a buffer
+    chown system system /proc/rpmh_modem/sleepinfo
+    chmod 0666 /proc/rpmh_modem/sleepinfo
+    #endif OPLUS_FEATURE_POWER_MONITOR
+
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/dpolicy_expect
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/fsync_protect
+    chmod 0666 /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    #Weichao.Guo@BSP.Kernel.FS, 2021/06/01, Add for oF2FS 2.x performance tuning
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/min_ssr_sections 722
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/min_fsync_blocks 20
+    write /sys/fs/f2fs/${dev.mnt.blk.userdata}/ipu_policy 56
+
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_max_sleep_time
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_min_sleep_time
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_urgent
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/discard_granularity
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/iostat_enable
+
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_max_sleep_time
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_min_sleep_time
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/gc_urgent
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/discard_granularity
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/iostat_enable
+#Weichao.Guo@BSP.Kernel.FS,2020/12/01, Add for reserve space
+    chown root system /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    chmod 0660 /sys/fs/f2fs/${dev.mnt.blk.userdata}/reserved_blocks
+    chown root system /sys/fs/ext4/${dev.mnt.blk.userdata}/reserved_clusters
+    chmod 0660 /sys/fs/ext4/${dev.mnt.blk.userdata}/reserved_clusters
+
+#Liangwen.Ke@PSW.CN.BT.Basic.Customize.2120948, 2019/06/26,
+#Add for supporting QC firmware update by sau_res
+on post-fs-data
+#Avinash.Pandey@PSW.CN.BT.Basic.Customize.ALM-530653, 2020/10/28,
+#change permission of /data/vendor for supporting QC firmware update by sau_res for non NFC models
+    chmod 0777 /data/vendor
+    chmod 0777 /data/vendor/bluetooth
+    mkdir /data/vendor/bluetooth/fw 0777 bluetooth bluetooth
+#ifdef OPLUS_FEATURE_RECOVERY_BOOT_REASON
+# sam.li@ANDROID.UPDATABILITY, 2021/01/09, Add for recovery boot reason
+    rm /mnt/vendor/oplusreserve/rbr_log/last_init_boot_failed.log
+#endif /* OPLUS_FEATURE_RECOVERY_BOOT_REASON */
+#YangQiang@CONNECTIVITY.BT.Basic.Feature.907429, 2020/12/29,
+#change permission of /data/vendor/bluetooth/fw for supporting QC firmware update by sau_res for bluetooth model.
+service changeBtFwPermission /odm/bin/init.oplus.btChangePermission.sh "changeBtFwPermission"
+    disabled
+    oneshot
+on property:sys.oplus.bt.sau_res_fw_update=1
+    start changeBtFwPermission
+
+#Xuefeng.Peng@ANDROID.STORAGE.0, 2019/07/25, Add for QT test enable adb after fastboot flash the device for FDE version
+on boot && property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    load_fastboot_adb_props
+
+#ifdef OPLUS_FEATURE_SIMSWITCH_PROPERTY
+#pixiaojun@ANDROID.CUSTOMIZE add for subnet property override
+on property:sys.override.simswitch.property=*
+    override_simswitch_property ${sys.override.simswitch.property}
+#endif OPLUS_FEATURE_SIMSWITCH_PROPERTY
+
+#ifdef OPLUS_FEATURE_OPERATOR
+#Xin.Zou@ANDROID.SYS, 2022/01/07, add for operator bind media path
+on property:persist.sys.customize.media=*
+    customize_media_property ${persist.sys.customize.media}
+#endif OPLUS_FEATURE_OPERATOR
+
+#ifdef OPLUS_DEATH_HEALER
+#Wen.Luo@BSP.Kernel.Stability, 2020/04/11, enable Death Healer
+on late-init
+    write /proc/sys/kernel/hung_task_timeout_secs 60
+    write /proc/sys/kernel/hung_task_selective_monitoring 0
+#endif
+
+
+#ifdef OPLUS_FEATURE_POWER_MONITOR
+#yunqing.zeng@BSP.POWER.BASIC 2019-12-30, Add server for modem sleep rate duration.
+service qmi_master_stats_service /odm/bin/qmi-framework-tests/qmi_master_stats_service
+    class main
+    user system
+    group system
+    disabled
+    oneshot
+#endif OPLUS_FEATURE_POWER_MONITOR
+
+
+#ifdef OPLUS_FEATURE_MEMLEAK_DETECT
+#Hailong.Liu@ANDROID.MM, 2020/03/18, add for svelte logger
+on boot
+    chown system system /dev/svelte_log
+    chmod 0622 /dev/svelte_log
+#endif /* OPLUS_FEATURE_MEMLEAK_DETECT */
+
+#yangmingjin@BSP.CHG.Basic 2019/05/24 add for work mode set
+on boot
+    chown radio system /proc/da9313/work_mode
+    chmod 0664  /proc/da9313/work_mode
+
+#ifdef OPLUS_ARCH_EXTENDS
+#Jie.Du@MULTIMEDIA.AUDIODRIVER.SMARTPA, 2021/07/07, add for tfa98xx calibrate
+    chown system audio /sys/bus/i2c/devices/4-0034/reg
+    chown system audio /sys/bus/i2c/devices/4-0035/reg
+    chown system audio /sys/bus/i2c/devices/4-0036/reg
+    chown system audio /sys/bus/i2c/devices/4-0034/rw
+    chown system audio /sys/bus/i2c/devices/4-0035/rw
+    chown system audio /sys/bus/i2c/devices/4-0036/rw
+    chown system audio /sys/bus/i2c/devices/2-0034/reg
+    chown system audio /sys/bus/i2c/devices/2-0034/rw
+    chmod 0220 /sys/bus/i2c/devices/4-0034/reg
+    chmod 0220 /sys/bus/i2c/devices/4-0035/reg
+    chmod 0220 /sys/bus/i2c/devices/4-0036/reg
+    chmod 0660 /sys/bus/i2c/devices/4-0034/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0035/rw
+    chmod 0660 /sys/bus/i2c/devices/4-0036/rw
+    chmod 0220 /sys/bus/i2c/devices/2-0034/reg
+    chmod 0660 /sys/bus/i2c/devices/2-0034/rw
+#endif /* OPLUS_ARCH_EXTENDS */
+
+#ifdef OPLUS_FEATURE_THIRDPARTS
+#qiukangwen@ANDROID.BUILD, 2021/09/05, Add for fix folder permission
+on property:vold.fbe.decrypted=1 && property:ro.board.platform=lahaina
+    chmod 2770 /data/media/0/Pictures
+    chmod 2770 /data/media/0/Music
+    chmod 2770 /data/media/0/Movies
+    chmod 2770 /data/media/0/Pictures/.thumbnails
+    chmod 2770 /data/media/0/Music/.thumbnails
+    chmod 2770 /data/media/0/Movies/.thumbnails
+
+on property:vold.fbe.decrypted=1 && property:ro.board.platform=holi
+    chmod 2770 /data/media/0/Pictures
+    chmod 2770 /data/media/0/Music
+    chmod 2770 /data/media/0/Movies
+    chmod 2770 /data/media/0/Pictures/.thumbnails
+    chmod 2770 /data/media/0/Music/.thumbnails
+    chmod 2770 /data/media/0/Movies/.thumbnails
+#endif /* OPLUS_FEATURE_THIRDPARTS */
+
+
+#TanZhengpeng@NETWORK.REG.1202458, 2017/12/30
+on property:vendor.oplus.radio.factory.no=*
+    setprop persist.sys.oplus.factory.no ${vendor.oplus.radio.factory.no}
+
+on property:persist.sys.oplus.radio.need_rescue_pa_damage=*
+    setprop persist.vendor.oplus.need_rescue_pa_damage ${persist.sys.oplus.radio.need_rescue_pa_damage}
+
+on property:persist.sys.oplus.radio.redirect_rftype=*
+    setprop persist.vendor.oplus.redirect_rftype ${persist.sys.oplus.radio.redirect_rftype}
+#endif
+
+#ifdef OPLUS_FEATURE_DEXOPT_FRAMEWORK
+#Futeng.Yang@ANDROID.PMS, 2021/02/04, add for control cpu set when high tem
+on post-fs-data
+    mkdir /data/system/oplus-dex 0770 system system
+    restorecon /data/system/oplus-dex
+#endif OPLUS_FEATURE_DEXOPT_FRAMEWORK
+
+#ifdef OPLUS_BUG_STABILITY
+service onbootlog system_ext/bin/onbootlog
+   class core
+   user root
+   group root system
+   oneshot
+
+service rbr_rescue_party /system_ext/bin/phoenix_log_native_helper.sh ERROR_NATIVE_REBOOT_INTO_RECOVERY
+     class main
+     disabled
+     oneshot
+#endif
+
+#endif /* OPLUS_FEATURE_PERFORMANCE */

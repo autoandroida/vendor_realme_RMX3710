@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineer_switch>
+    <version>20190101</version>
+    <switch switchName="activity_sw" switchState="false" />
+    <switch switchName="service_sw" switchState="false" />
+    <switch switchName="shell_command_sw" switchState="false" />
+    <switch switchName="engineer_order_sw" switchState="false" />
+    <switch switchName="reset_atm_sw" switchState="false" />
+</engineer_switch>

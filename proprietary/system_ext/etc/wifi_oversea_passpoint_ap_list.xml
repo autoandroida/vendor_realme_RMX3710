@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<WifiOverseaPasspointAPList>
+<Passpoint>
+	<PreCondition>
+		<requiredFeature feature="oplus.software.wlan.ust_passpoint"/>
+		<requiredSimOperator mccmnc="310260"/>
+		<requiredSimOperator mccmnc="310310"/>
+	</PreCondition>
+	<PasspointConfig>
+		<FriendlyName>t-mobile.com</FriendlyName>
+		<Fqdn>t-mobile.com</Fqdn>
+		<EapType>EAP_AKA</EapType>
+		<Realm>DEFAULT</Realm>
+	</PasspointConfig>
+</Passpoint>
+
+<Passpoint>
+	<PreCondition>
+		<requiredFeature feature="oplus.software.wlan.passpoint_attmex"/>
+		<requiredSimOperator mccmnc="334050"/>
+                <requiredSimOperator mccmnc="334090"/>
+	</PreCondition>
+	<PasspointConfig>
+		<FriendlyName>AT&amp;T MX Wi-Fi</FriendlyName>
+		<Fqdn>attmexwifi.com</Fqdn>
+		<EapType>EAP_AKA</EapType>
+		<Realm>DEFAULT</Realm>
+	</PasspointConfig>
+</Passpoint>
+
+<Passpoint>
+        <PreCondition>
+                <requiredFeature feature="oplus.software.wlan.passpoint_attmex"/>
+                <requiredSimOperator mccmnc="310410"/>
+        </PreCondition>
+        <PasspointConfig>
+                <FriendlyName>AT&amp;T MX Wi-Fi</FriendlyName>
+                <Fqdn>attwifi.com</Fqdn>
+                <EapType>EAP_AKA</EapType>
+                <Realm>DEFAULT</Realm>
+        </PasspointConfig>
+</Passpoint>
+
+<Passpoint>
+	<PreCondition>
+		<requiredFeature feature="oplus.software.wlan.passpoint_verizon"/>
+		<requiredSimOperator mccmnc="348110"/>
+	</PreCondition>
+	<PasspointConfig>
+		<FriendlyName>VerizonWiFi</FriendlyName>
+		<Fqdn>DEFAULT</Fqdn>
+		<EapType>EAP_AKA</EapType>
+		<Realm>DEFAULT</Realm>
+	</PasspointConfig>
+</Passpoint>
+
+<Passpoint>
+	<PreCondition>
+		<requiredFeature feature="oplus.software.wlan.uss_passpoint"/>
+		<requiredSimOperator mccmnc="310120"/>
+		<requiredSimOperator mccmnc="312530"/>
+	</PreCondition>
+	<PasspointConfig>
+		<FriendlyName>DEFAULT</FriendlyName>
+		<Fqdn>DEFAULT</Fqdn>
+		<EapType>EAP_AKA</EapType>
+		<Realm>DEFAULT</Realm>
+	</PasspointConfig>
+</Passpoint>
+
+<Passpoint>
+	<PreCondition>
+		<requiredFeature feature="oplus.software.wlan.passpoint_jio"/>
+		<requiredSimOperator mccmnc="405840"/>
+		<requiredSimOperator mccmnc="405854"/>
+		<requiredSimOperator mccmnc="405855"/>
+		<requiredSimOperator mccmnc="405856"/>
+		<requiredSimOperator mccmnc="405857"/>
+		<requiredSimOperator mccmnc="405858"/>
+		<requiredSimOperator mccmnc="405859"/>
+		<requiredSimOperator mccmnc="405860"/>
+		<requiredSimOperator mccmnc="405861"/>
+		<requiredSimOperator mccmnc="405862"/>
+		<requiredSimOperator mccmnc="405863"/>
+		<requiredSimOperator mccmnc="405864"/>
+		<requiredSimOperator mccmnc="405865"/>
+		<requiredSimOperator mccmnc="405866"/>
+		<requiredSimOperator mccmnc="405867"/>
+		<requiredSimOperator mccmnc="405868"/>
+		<requiredSimOperator mccmnc="405869"/>
+		<requiredSimOperator mccmnc="405870"/>
+		<requiredSimOperator mccmnc="405871"/>
+		<requiredSimOperator mccmnc="405872"/>
+		<requiredSimOperator mccmnc="405873"/>
+		<requiredSimOperator mccmnc="405874"/>
+	</PreCondition>
+	<PasspointConfig>
+		<FriendlyName>JioPrivateNet</FriendlyName>
+		<Fqdn>DEFAULT</Fqdn>
+		<EapType>EAP_AKA</EapType>
+		<Realm>DEFAULT</Realm>
+	</PasspointConfig>
+</Passpoint>
+
+</WifiOverseaPasspointAPList>

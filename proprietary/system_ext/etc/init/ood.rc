@@ -1,0 +1,36 @@
+# TODO: remove ood service
+
+service ood /system_ext/bin/ood
+    user root
+    group root system
+    disabled
+
+on property:sys.boot_completed=1 && property:persist.sys.ood.enable=0
+    stop ood
+
+on property:sys.boot_completed=1 && property:persist.sys.ood.enable=1
+    start ood
+
+on init
+    setprop sys.oplus.ood.onetrace.diag false
+    setprop sys.oplus.ood.midasd.diag false
+    setprop sys.oplus.perfetto.enable false
+
+on property:sys.oplus.ood.onetrace.diag=false && property:sys.oplus.ood.midasd.diag=false && property:sys.oplus.perfetto.enable=false
+    setprop security.oplus.lower_kptr_restrict 0
+
+on property:sys.oplus.ood.onetrace.diag=true
+    setprop security.oplus.lower_kptr_restrict 1
+
+on property:sys.oplus.ood.midasd.diag=true
+    setprop security.oplus.lower_kptr_restrict 1
+
+on property:sys.oplus.perfetto.enable=true
+    setprop security.oplus.lower_kptr_restrict 1
+
+on post-fs-data
+    # Create directory for ood.
+    mkdir /data/misc/ood 0770 root system
+
+on property:sys.oplus.osvelte.enabled_pid=*
+    exec u:r:heapprofd:s0 -- /system_ext/bin/osvelte malloc-debug -e ${sys.oplus.osvelte.enabled_pid}

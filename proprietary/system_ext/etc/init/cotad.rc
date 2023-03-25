@@ -1,0 +1,14 @@
+service cotad /system_ext/bin/cotad
+    interface aidl cotaservice
+    class core
+    user root
+    group system
+    oneshot
+    disabled # does not start with the core class
+
+service cotad-boot /system_ext/bin/cotad boot_mount
+    # class core
+    user root
+    group system
+    oneshot
+    disabled # does not start with the core class

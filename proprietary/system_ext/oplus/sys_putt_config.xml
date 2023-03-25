@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<filter-conf>
+  <version>20221001</version>
+  <only_support_pkg_list_switch>false</only_support_pkg_list_switch>
+  <support_pkg_list>
+    <pkg>com.tencent.mm</pkg>
+    <pkg>com.tencent.mobileqq</pkg>
+    <pkg>com.sankuai.meituan</pkg>
+    <pkg>com.dianping.v1</pkg>
+    <pkg>com.sankuai.movie</pkg>
+    <pkg>com.taobao.movie.android</pkg>
+    <pkg>com.eg.android.AlipayGphone</pkg>
+    <pkg>com.MobileTicket</pkg>
+    <pkg>com.umetrip.android.msky.app</pkg>
+    <pkg>com.unionpay</pkg>
+    <pkg>com.yipiao</pkg>
+    <pkg>my.com.tngdigital.ewallet</pkg>
+    <pkg>com.grabtaxi.passenger</pkg>
+    <pkg>com.shopee.my</pkg>
+    <pkg>my.com.myboost</pkg>
+    <pkg>com.maybank2u.life</pkg>
+    <pkg>jp.naver.line.android</pkg>
+    <pkg>th.co.truemoney.wallet</pkg>
+    <pkg>com.beeasy.airpay</pkg>
+    <pkg>com.mservice.momotransfer</pkg>
+    <pkg>vn.com.vng.zalopay</pkg>
+    <pkg>com.beeasy.toppay</pkg>
+    <pkg>vnpay.smartacccount</pkg>
+    <pkg>com.gscandroid.yk</pkg>
+    <pkg>com.phonepe.app</pkg>
+    <pkg>net.one97.paytm</pkg>
+    <pkg>com.google.android.apps.nbu.paisa.user</pkg>
+    <pkg>com.attidomobile.passwallet</pkg>
+    <pkg>com.bca</pkg>
+    <pkg>com.shopee.id</pkg>
+    <pkg>com.mercadopago.wallet</pkg>
+    <pkg>com.pagopopmobile</pkg>
+    <pkg>com.bancomer.mbanking</pkg>
+    <pkg>mx.com.bancoazteca.bazdigitalmovil</pkg>
+  </support_pkg_list>
+
+  <unsupport_pkg_list />
+
+  <relaunch_force_pkg_list>
+    <pkg>com.test</pkg>
+  </relaunch_force_pkg_list>
+  <relaunch_force_cpn_list>
+    <pkg>com.xhey.xcamera/com.xhey.xcamera.ui.edit.EditActivity</pkg>
+    <pkg>com.tencent.map/com.tencent.map.hippy.page.HippyActivity</pkg>
+    <pkg>com.google.android.apps.translate/com.google.android.apps.translate.inputs.ConversationIntroActivity</pkg>
+    <pkg>com.facebook.katana/com.facebook.katana.immersiveactivity.ImmersiveActivity</pkg>
+    <pkg>us.zoom.videomeetings/com.zipow.videobox.SimpleActivity</pkg>
+    <pkg>cn.missevan/cn.missevan.activity.MainActivity</pkg>
+  </relaunch_force_cpn_list>
+
+  <support_putt_cpn_list />
+  <unsupport_putt_cpn_list>
+    <pkg>com.alibaba.android.rimet/com.alibaba.android.teleconf.mozi.activity.TeleVideoConfActivity</pkg>
+    <pkg>com.eg.android.AlipayGphone/com.alipay.android.phone.preinstall.channel.ChannelActivity</pkg>
+  </unsupport_putt_cpn_list>
+</filter-conf>

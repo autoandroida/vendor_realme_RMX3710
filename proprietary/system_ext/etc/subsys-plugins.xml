@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+ <plugin name="com.oplus.subsys.OcloudPlugin"
+         module="ocloud"
+         loaded="true"
+         path="/system_ext/priv-app/OcloudApp/OcloudApp.apk"/>
+</plugins>

@@ -1,0 +1,31 @@
+##########################################################
+# Copyright (C), 2008-2018, OPLUS Mobile Comm Corp., Ltd
+# File: self_init_last_boot_reason.rc
+#
+# Description:
+#	Definitions for oplus_last_boot_reason service.
+#
+# Version: 1.0
+# Date created: 2021/12/23
+#
+# --------------------------- Revision History: ------------------------------------
+# <version>		<date>		<author>		<desc>
+# Revision 1.0		2021/12/23	xutongyang	Created
+#######################################################
+
+on property:sys.boot_completed=1 && property:ro.boot.bootreason=*
+    setprop vendor.oplus.boot.bootreason ${ro.boot.bootreason}
+
+on property:sys.boot_completed=1 && property:sys.boot.reason.last=*
+    setprop vendor.oplus.boot.reason.last ${sys.boot.reason.last}
+
+on property:sys.boot_completed=1
+    restorecon /system/system_ext/bin/oplus_last_boot_reason
+    start oplus_last_boot_reasons
+
+service oplus_last_boot_reasons /system/system_ext/bin/oplus_last_boot_reason
+    class core
+    user system
+    group root system
+    disabled
+    oneshot

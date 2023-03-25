@@ -1,0 +1,52 @@
+on property:debug.oplus.video.log.switch=On
+
+on property:debug.oplus.video.log.switch=Off
+
+on post-fs-data
+    # Create directory used by codec input dump
+    mkdir /data/vendor/videodump 0777 media system
+    mkdir /data/persist_log/TMP/videodump 0777 system system
+
+on property:debug.oplus.video.mtk.c2=0
+    start videologmtkc2off
+
+on property:debug.oplus.video.mtk.c2=1
+    start videologmtkc2on
+
+on property:debug.oplus.video.qcom.c2=0
+    start videologqcomc2off
+
+on property:debug.oplus.video.qcom.c2=1
+    start videologqcomc2on
+
+service videologmtkc2on /system/system_ext/bin/debugvideo_common.sh "videologmtkc2on"
+    class core
+    user root
+    group system root shell
+    seclabel u:r:debugvideo:s0
+    disabled
+    oneshot
+
+service videologmtkc2off /system/system_ext/bin/debugvideo_common.sh "videologmtkc2off"
+    class core
+    user root
+    group system root shell
+    seclabel u:r:debugvideo:s0
+    disabled
+    oneshot
+
+service videologqcomc2on /system/system_ext/bin/debugvideo_common.sh "videologqcomc2on"
+    class core
+    user root
+    group system root shell
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+service videologqcomc2off /system/system_ext/bin/debugvideo_common.sh "videologqcomc2off"
+    class core
+    user root
+    group system root shell
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datalimitromupdate>
+    <version>2021110416</version>
+
+    <defualtconfig>
+        <OPLUS_MUST_LIMIT_APP>com.ss.android.ugc.aweme,com.tencent.weishi,com.smile.gifmaker,air.tv.douyu.android,com.duowan.kiwi,com.qiyi.video,com.tencent.qqlive,tv.danmaku.bili,com.youku.phone,com.ss.android.ugc.live</OPLUS_MUST_LIMIT_APP>
+        <OPLUS_LIMIT_SPEED_WHITE_APPS>com.tencent.mm,com.tencent.mobileqq,com.immomo.momo,com.heytap.cast,com.heytap.synergy,com.android.dlna.service,com.heytap.accessory,com.android.networkstack,com.oppo.optvassistant,com.oplus.onelauncher,net.he.networktools,com.coloros.sharescreen,com.google.android.networkstack</OPLUS_LIMIT_SPEED_WHITE_APPS>
+        <OPLUS_FORCE_LIMIT_APP>com.tencent.mm:5600,com.tencent.mobileqq:5600,com.heytap.browser:6400,com.tencent.mtt:6400,com.UCMobile:6400,sogou.mobile.explorer:6400,com.qihoo.browser:6400,com.ijinshan.browser_fast:6400,com.android.chrome:6400,com.taobao.taobao:7200,com.tmall.wireless:7200,com.coloros.assistantscreen:2400,com.youku.phone:7200,com.dianping.v1:5600,com.sankuai.meituan:5600,com.xunmeng.pinduoduo:7200,com.sankuai.meituan.takeoutnew:5600,me.ele:5600,com.coloros.note:1200,,com.ss.android.ugc.aweme:10000,com.ss.android.article.news:5600,com.tencent.tmgp.sgame:5600,com.tencent.tmgp.pubgmhd:5600,com.baidu.BaiduMap:4000,com.eg.android.AlipayGphone:5600,com.coloros.screenrecorder:4000,com.jingdong.app.mall:7200,com.suning.mobile.ebuy:5600,com.taobao.idlefish:5600,com.baidu.browser.apps:6400,com.sina.weibo:5600,com.netease.newsreader.activity:5600,com.netease.cloudmusic:5600,com.sohu.newsclient:5600,com.tencent.qqmusic:5600,com.kugou.android:5600,com.tencent.karaoke:5600,cn.kuwo.player:5600,com.ximalaya.ting.android:5600,ctrip.android.view:5600,com.taobao.trip:5600</OPLUS_FORCE_LIMIT_APP>
+        <OPLUS_IGNORE_LIMIT_APP>com.coloros.gallery3d,com.coloros.filemanager,com.coloros.calendar,com.oppo.camera,com.coloros.soundrecorder,android.uid.systemui,com.oppo.otaui,com.coloros.calculator,,com.coloros.alarmclock,com.android.contacts,com.android.mms,com.android.permissioncontroller,com.oplus.logkit,com.android.lunacher,com.coloros.wirelesssettings</OPLUS_IGNORE_LIMIT_APP>
+        <OPLUS_HIGH_LIMIT_ACTIVITY>com.ss.android.ugc.aweme.live.LivePlayActivity,com.tencent.mm.plugin.voip.ui.VideoActivity,com.tencent.mm.plugin.topstory.ui.video.list.TopStoryListVideoUI,,com.taobao.taolive.room.TaoLiveVideoActivity,com.youku.ui.activity.DetailActivity,com.ss.android.xiagualongvideo.detail.LongVideoDetailActivity</OPLUS_HIGH_LIMIT_ACTIVITY>
+        <OPLUS_DATA_LIMIT_CONFIG>0,0,0,0,0,0,4020,0,0,1</OPLUS_DATA_LIMIT_CONFIG>
+        <CHECK_NETWORK_SERVER>CHECK_NETWORK_SERVER_03</CHECK_NETWORK_SERVER>
+    </defualtconfig>
+
+    <!-- china mainland -->
+    <datalimitconfig country="CN">
+        <OPLUS_MUST_LIMIT_APP>com.ss.android.ugc.aweme,com.tencent.weishi,com.smile.gifmaker,air.tv.douyu.android,com.duowan.kiwi,com.qiyi.video,com.tencent.qqlive,tv.danmaku.bili,com.youku.phone,com.ss.android.ugc.live,com.tencent.wemeet.app,us.zoom.videomeetings</OPLUS_MUST_LIMIT_APP>
+        <OPLUS_LIMIT_SPEED_WHITE_APPS>com.tencent.mm,com.tencent.mobileqq,com.immomo.momo,com.heytap.cast,com.heytap.synergy,com.android.dlna.service,com.heytap.accessory,com.android.networkstack,com.oppo.optvassistant,com.oplus.onelauncher,net.he.networktools,com.coloros.sharescreen,com.google.android.networkstack</OPLUS_LIMIT_SPEED_WHITE_APPS>
+        <OPLUS_FORCE_LIMIT_APP>com.tencent.mm:5600,com.tencent.mobileqq:5600,com.heytap.browser:6400,com.tencent.mtt:6400,com.UCMobile:6400,sogou.mobile.explorer:6400,com.qihoo.browser:6400,com.ijinshan.browser_fast:6400,com.android.chrome:6400,com.taobao.taobao:7200,com.tmall.wireless:7200,com.coloros.assistantscreen:2400,com.youku.phone:7200,com.dianping.v1:5600,com.sankuai.meituan:5600,com.xunmeng.pinduoduo:7200,com.sankuai.meituan.takeoutnew:5600,me.ele:5600,com.coloros.note:1200,,com.ss.android.ugc.aweme:10000,com.ss.android.article.news:5600,com.tencent.tmgp.sgame:5600,com.tencent.tmgp.pubgmhd:5600,com.baidu.BaiduMap:4000,com.eg.android.AlipayGphone:5600,com.coloros.screenrecorder:4000,com.jingdong.app.mall:7200,com.suning.mobile.ebuy:5600,com.taobao.idlefish:5600,com.baidu.browser.apps:6400,com.sina.weibo:5600,com.netease.newsreader.activity:5600,com.netease.cloudmusic:5600,com.sohu.newsclient:5600,com.tencent.qqmusic:5600,com.kugou.android:5600,com.tencent.karaoke:5600,cn.kuwo.player:5600,com.ximalaya.ting.android:5600,ctrip.android.view:5600,com.taobao.trip:5600</OPLUS_FORCE_LIMIT_APP>
+        <OPLUS_IGNORE_LIMIT_APP>com.coloros.gallery3d,com.coloros.filemanager,com.coloros.calendar,com.oppo.camera,com.coloros.soundrecorder,android.uid.systemui,com.oppo.otaui,com.coloros.calculator,,com.coloros.alarmclock,com.android.contacts,com.android.mms,com.android.permissioncontroller,com.oplus.logkit,com.android.lunacher,com.coloros.wirelesssettings</OPLUS_IGNORE_LIMIT_APP>
+        <OPLUS_HIGH_LIMIT_ACTIVITY>com.ss.android.ugc.aweme.live.LivePlayActivity,com.tencent.mm.plugin.voip.ui.VideoActivity,com.tencent.mm.plugin.topstory.ui.video.list.TopStoryListVideoUI,,com.taobao.taolive.room.TaoLiveVideoActivity,com.youku.ui.activity.DetailActivity,com.ss.android.xiagualongvideo.detail.LongVideoDetailActivity</OPLUS_HIGH_LIMIT_ACTIVITY>
+        <OPLUS_DATA_LIMIT_CONFIG>0,0,0,0,0,0,4020,0,0,1</OPLUS_DATA_LIMIT_CONFIG>
+        <CHECK_NETWORK_SERVER>CHECK_NETWORK_SERVER_03</CHECK_NETWORK_SERVER>
+    </datalimitconfig>
+
+    <!-- defualt exp-->
+    <datalimitconfig country="IN">
+        <OPLUS_MUST_LIMIT_APP>com.google.android.youtube,com.kwai.bulldog,com.mxtech.videoplayer.ad,us.zoom.videomeetings,com.netflix.mediaclient</OPLUS_MUST_LIMIT_APP>
+        <OPLUS_LIMIT_SPEED_WHITE_APPS>com.whatsapp,org.telegram.messenger,com.facebook.orca,com.facebook.katana,com.oppo.optvassistant,com.oplus.onelauncher</OPLUS_LIMIT_SPEED_WHITE_APPS>
+        <OPLUS_FORCE_LIMIT_APP>com.whatsapp:600,com.facebook.orca:1000,org.telegram.messenger:600,com.netflix.mediaclient:500,com.facebook.katana:800,com.facebook.lite:800,com.gasax.nicksfreefire:600,com.ludo.king:900,com.king.candycrushsaga:900,us.zoom.videomeetings:600,com.mxtech.videoplayer.ad:800,com.kwai.bulldog:600,com.google.android.youtube:1250,com.android.chrome:600</OPLUS_FORCE_LIMIT_APP>
+        <OPLUS_IGNORE_LIMIT_APP>com.coloros.gallery3d,com.coloros.filemanager,com.coloros.calendar,com.oppo.camera,com.coloros.soundrecorder,android.uid.systemui,com.oppo.otaui,com.coloros.calculator,,com.coloros.alarmclock,com.android.contacts,com.android.mms,com.android.permissioncontroller,com.oplus.logkit,com.google.android.apps.messaging,com.google.android.calendar,com.google.android.contacts,com.android.lunacher</OPLUS_IGNORE_LIMIT_APP>
+        <OPLUS_DATA_LIMIT_CONFIG>0,0,0,0,0,0,800,0,0,1</OPLUS_DATA_LIMIT_CONFIG>
+    </datalimitconfig>
+
+    <!--Haicheng.wu@NETWORK.DATA.2040505  2021/9/17, add ID config  -->
+    <datalimitconfig country="ID">
+        <OPLUS_MUST_LIMIT_APP>com.google.android.youtube,com.kwai.bulldog,com.mxtech.videoplayer.ad,us.zoom.videomeetings,com.netflix.mediaclient</OPLUS_MUST_LIMIT_APP>
+        <OPLUS_LIMIT_SPEED_WHITE_APPS>com.whatsapp,org.telegram.messenger,com.facebook.orca,com.facebook.katana,com.oppo.optvassistant,com.oplus.onelauncher</OPLUS_LIMIT_SPEED_WHITE_APPS>
+        <OPLUS_FORCE_LIMIT_APP>com.whatsapp:600,com.facebook.orca:1000,org.telegram.messenger:600,com.netflix.mediaclient:500,com.facebook.katana:800,com.facebook.lite:800,com.gasax.nicksfreefire:600,com.ludo.king:900,com.king.candycrushsaga:900,us.zoom.videomeetings:600,com.mxtech.videoplayer.ad:800,com.kwai.bulldog:600,com.google.android.youtube:1250,com.android.chrome:600</OPLUS_FORCE_LIMIT_APP>
+        <OPLUS_IGNORE_LIMIT_APP>com.coloros.gallery3d,com.coloros.filemanager,com.coloros.calendar,com.oppo.camera,com.coloros.soundrecorder,android.uid.systemui,com.oppo.otaui,com.coloros.calculator,,com.coloros.alarmclock,com.android.contacts,com.android.mms,com.android.permissioncontroller,com.oplus.logkit,com.google.android.apps.messaging,com.google.android.calendar,com.google.android.contacts,com.android.lunacher</OPLUS_IGNORE_LIMIT_APP>
+        <OPLUS_DATA_LIMIT_CONFIG>0,0,0,0,0,0,800,0,0,1</OPLUS_DATA_LIMIT_CONFIG>
+        <CHECK_NETWORK_SERVER>CHECK_NETWORK_SERVER_01</CHECK_NETWORK_SERVER>
+    </datalimitconfig>
+
+</datalimitromupdate>

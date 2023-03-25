@@ -1,0 +1,36 @@
+############################################################
+##
+#
+#本文件的文件格式与prop文件格式相同，支持更新和删除persist类型的属性名称.
+#
+#配置方法:
+#1. 更新property
+#例如将persist.sys.oldupdate更新为persist.sys.newupdate
+#persist.sys.oldupdate=persist.sys.newupdate
+#
+#2. 删除property
+#例如删除persist.sys.testdel
+#persist.sys.testdel=
+#
+#
+#注意:
+#1. 不支持修改属性值
+#2. 非persist类型的属性，请直接修改prop文件，不要配置在该文件中
+#
+##
+############################################################
+
+#TanZhengpeng@Network, 2021/06/10, Add for network property update
+persist.radio.oppo.has_show_qmiissue=persist.radio.oplus.has_show_qmiissue
+persist.sys.oppo.simlockoperator=persist.sys.oplus.simlockoperator
+#Jiangyi@Androdi 2021/09/14 Add for logkit property update
+persist.sys.oppo.log.config=persist.sys.debuglog.config.update
+#ChenWenshuai@Android 2021/10/22 add for normal reboot property
+persist.sys.oppo.reboot=persist.sys.oplus.reboot
+
+#Lijuan.Wei@ANDROID.BUILD 2021/11/24,add for region property
+persist.sys.oppo.region=persist.sys.oplus.region
+
+#ZhongHaiping@ANDROID.BUILD, 2022/08/16,add for persist.version.confidential property
+#always load from partition build.prop, never write data property
+persist.version.confidential=

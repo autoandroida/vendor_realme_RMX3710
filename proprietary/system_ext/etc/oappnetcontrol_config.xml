@@ -1,0 +1,134 @@
+<OAppNetControl>
+    <OAppNetControlVersion>20200430</OAppNetControlVersion>
+
+    <AppNetworkMonitorSwitch>
+        <Value version="20200430" config="1"/>
+    </AppNetworkMonitorSwitch>
+
+    <BgAppNetControlSwitch>
+        <Value version="20200430" config="1"/>
+    </BgAppNetControlSwitch>
+
+    <BgAppNetControlShortUnfreezeFilter>
+        <Value version="20200430" config="20"/>
+    </BgAppNetControlShortUnfreezeFilter>
+
+    <BgAppNetControlDefaultConfig>
+        <Value version="20210910" config="011" timer="000F00"/>
+    </BgAppNetControlDefaultConfig>
+
+    <BgAppNetControlWhiteListConfig>
+        <Value version="20210910"
+        app="com.qiyi.video" config="111" timer="2D0F00"
+        app="com.tencent.qqlive" config="111" timer="2D0F00"
+        app="com.ss.android.article.video" config="111" timer="2D0F00"
+        app="com.kugou.android" config="111" timer="1E0F00"
+        app="com.ss.android.ugc.aweme" config="111" timer="1E0F00"
+        app="com.smile.gifmaker" config="111" timer="1E0F00"
+        app="com.UCMobile" config="111" timer="140F00"
+        app="com.baidu.searchbox" config="111" timer="140F00"
+        app="com.kmxs.reader" config="111" timer="140F00"
+        app="com.ss.android.article.lite" config="111" timer="140F00"
+        app="com.taobao.taobao" config="111" timer="2D0F00"
+        app="com.xunmeng.pinduoduo" config="111" timer="2D0F00"/>
+    </BgAppNetControlWhiteListConfig>
+
+    <ScreenOffAppNetControlSwitch>
+        <Value version="20210910" config="0"/>
+    </ScreenOffAppNetControlSwitch>
+
+    <ScreenOffUnifiedRstInitDelay>
+        <Value version="20200430" config="60"/>
+    </ScreenOffUnifiedRstInitDelay>
+
+    <ScreenOffUnifiedRstDelayStepCount>
+        <Value version="20200430" config="1"/>
+    </ScreenOffUnifiedRstDelayStepCount>
+
+    <ScreenOffUnifiedRstDelayStepInterval>
+        <Value version="20200430" config="300"/>
+    </ScreenOffUnifiedRstDelayStepInterval>
+
+    <ScreenOffUnifiedRstMaxAllowDelay>
+        <Value version="20200430" config="300"/>
+    </ScreenOffUnifiedRstMaxAllowDelay>
+
+    <ScreenOffUnifiedRstDelayRestoreConditions>
+        <Value version="20200430" config="1800"/>
+    </ScreenOffUnifiedRstDelayRestoreConditions>
+
+    <ScreenOffUnifiedRstAppUnfreezeDelay>
+        <Value version="20200430" config="10"/>
+    </ScreenOffUnifiedRstAppUnfreezeDelay>
+
+    <ScreenOffUnifiedRstEnforceCount>
+        <Value version="20200430" config="20"/>
+    </ScreenOffUnifiedRstEnforceCount>
+
+    <ScreenOffRSTIgnoreWhiteList>
+        <Value version="20200430" config="0"/>
+    </ScreenOffRSTIgnoreWhiteList>
+
+    <ScreenOffRSTWhiteList>
+        <Value version="20200430"
+        app="com.qiyi.video"
+        app="com.tencent.qqlive"
+        app="com.ss.android.article.video"
+        app="com.ss.android.ugc.aweme"
+        app="com.smile.gifmaker"
+        app="com.android.browser"
+        app="com.UCMobile"
+        app="com.baidu.searchbox"
+        app="com.tencent.tmgp.sgame"
+        app="com.tencent.tmgp.pubgmhd"
+        app="com.kugou.android"
+        app="com.kmxs.reader"
+        app="com.taobao.taobao"
+        app="com.xunmeng.pinduoduo"
+        app="com.ss.android.article.lite"
+        app="com.jifen.qukan"
+        app="com.autonavi.minimap"
+        app="com.zhihu.android"
+        app="tv.danmaku.bili"
+        app="com.baidu.homework"
+        app="com.ss.android.article.news"
+        app="com.kuaishou.nebula"
+        app="com.ss.android.ugc.aweme.lite"
+        app="com.tencent.news"
+        app="com.youku.phone"
+        app="ctrip.android.view"
+        app="com.taobao.idlefish"
+        app="com.youdao.course"
+        app="com.sankuai.meituan"
+        app="com.tencent.karaoke"
+        app="me.ele"
+        app="com.ss.android.ugc.live"
+        app="com.tencent.mtt"
+        app="com.snda.wifilocating"
+        app="com.baidu.haokan"
+        app="com.le123.ysdq"
+        app="com.lechuan.midunovel"
+        app="com.hunantv.imgo.activity"
+        app="com.immomo.momo"
+        app="com.qq.reader"
+        app="air.tv.douyu.android"
+        app="com.xingin.xhs"
+        app="com.anjuke.android.app"
+        app="com.baidu.browser.apps"
+        app="com.ximalaya.ting.android"
+        app="com.dragon.read"
+        app="com.jingdong.app.mall"
+        app="com.wifi.key"
+        app="com.tencent.weishi"
+        app="com.tomato.bookreader"
+        app="com.tencent.reading"
+        app="tv.pps.mobile"
+        app="com.mt.mtxx.mtxx"
+        app="com.baidu.BaiduMap"
+        app="com.meitu.meiyancamera"
+        app="com.baidu.searchbox.lite"
+        app="com.zhongduomei.rrmj.society"
+        app="com.duowan.kiwi"
+        app="com.taobao.live"/>
+    </ScreenOffRSTWhiteList>
+</OAppNetControl>

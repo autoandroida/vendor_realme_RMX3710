@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<filter-conf>
+    <version>20221114</version>
+    <toggle>1</toggle>
+    <features>
+        <feature name="OnlineAband" enable="1"/>
+        <feature name="OplusDEE" enable="1">
+            <globalSVI>enable</globalSVI>
+            <application name="com.google.android.youtube">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.whatsapp">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.instagram.android">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.facebook.katana">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.supercell.brawlstars">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.google.android.dialer">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.android.chrome">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.google.android.googlequicksearchbox">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.google.android.googlequicksearchbox:search">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.google.android.apps.messaging">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="appinventor.ai_rkrofficial.Amazon_In">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.snapchat.android">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.mobile.legends">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.mobile.legends:UnityKillsMe">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.tencent.ig">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.kiloo.subwaysurf">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.dts.freefireth">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.amazon.mShop.android.shopping">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>2</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.android.mms">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+            <application name="com.android.contacts">
+                <scene type="Application">
+                    <action>
+                        <mode>CABC</mode>
+                        <cabc_enter>3</cabc_enter>
+                        <cabc_exit>1</cabc_exit>
+                    </action>
+                </scene>
+            </application>
+        </feature>
+    </features>
+</filter-conf>

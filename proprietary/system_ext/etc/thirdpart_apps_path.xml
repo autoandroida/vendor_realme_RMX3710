@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <ThirdpartApp>
+        <packageName>com.tencent.mm</packageName>
+        <logPath>/sdcard/Android/data/com.tencent.mm/MicroMsg/xlog</logPath>
+        <logPath>/sdcard/Android/data/com.tencent.mm/MicroMsg/crash</logPath>
+        <logPath>/storage/emulated/999/Android/data/com.tencent.mm/MicroMsg/xlog</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.tencent.mobileqq</packageName>
+        <logPath>/sdcard/Android/data/com.tencent.mobileqq/files/tencent/msflogs/com/tencent/mobileqq</logPath>
+        <logPath>/storage/emulated/999/Android/data/com.tencent.mobileqq/files/tencent/msflogs/com/tencent</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.kugou.android</packageName>
+        <logPath>/sdcard/kugou/log</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.tencent.qqlive</packageName>
+        <logPath>/sdcard/Android/data/com.tencent.qqlive/files/log</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.yx</packageName>
+        <logPath>/sdcard/Android/data/com.yx</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.duowan.mobile</packageName>
+        <logPath>/sdcard/Android/data/com.duowan.mobile/files/yymobile/logs</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.tencent.wework</packageName>
+        <logPath>/sdcard/Android/data/com.tencent.wework/files/src_log</logPath>
+        <logPath>/sdcard/Android/data/com.tencent.wework/files/src_clog</logPath>
+    </ThirdpartApp>
+    <ThirdpartApp>
+        <packageName>com.tencent.tmgp.cf</packageName>
+        <logPath>/sdcard/Android/data/com.tencent.tmgp.cf/cache/Cache/Log/</logPath>
+    </ThirdpartApp>
+</resources>

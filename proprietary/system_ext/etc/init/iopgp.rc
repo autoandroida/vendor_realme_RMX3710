@@ -1,0 +1,15 @@
+service iopgp /system_ext/bin/iopgp
+    class core
+    user system
+    group system
+    disabled
+
+on post-fs-data
+    # Create directory for iopgp (see iopgp_data_file in selinux file_contexts).
+    mkdir /data/misc/iopgp/ 0750 system system
+
+on property:sys.iopgp.enable=true
+    start iopgp
+
+on property:sys.iopgp.enable=false
+    stop iopgp
