@@ -1,0 +1,29 @@
+<!-- OPLUS_FEATURE_HEARTBEAT -->
+<!-- Asiga@NETWORK.POWER.4087952, 2022-08-01. -->
+<Heartbeat>
+    <HeartbeatVersion>20200430</HeartbeatVersion>
+
+    <HeartbeatService>
+        <version>20200430</version>
+        <heartbeat_enabled>true</heartbeat_enabled>
+        <heartbeat_app id="1">com.heytap.mcs</heartbeat_app>
+        <heartbeat_app id="2">com.aska.heartbeattest</heartbeat_app>
+    </HeartbeatService>
+
+    <HeartbeatPowerSaver>
+        <version>20200430</version>
+
+        <align_heartbeat_enabled>true</align_heartbeat_enabled>
+        <hitchhike_interval>120</hitchhike_interval>
+        <rrc_release_timer>5</rrc_release_timer>
+        <rrc_release_count_perh>6</rrc_release_count_perh>
+
+        <qcom_dynamic_cycle_enabled>false</qcom_dynamic_cycle_enabled>
+        <qcom_hitchhike_enabled>false</qcom_hitchhike_enabled>
+        <qcom_rrc_release_enabled>false</qcom_rrc_release_enabled>
+
+        <mtk_dynamic_cycle_enabled>true</mtk_dynamic_cycle_enabled>
+        <mtk_hitchhike_enabled>true</mtk_hitchhike_enabled>
+        <mtk_rrc_release_enabled>true</mtk_rrc_release_enabled>
+    </HeartbeatPowerSaver>
+</Heartbeat>

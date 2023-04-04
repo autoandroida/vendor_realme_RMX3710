@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<storage_feature>
+		<version>2022-08-27-01-01-01</version>
+		<feature_path ismulti="0" addr="/sys/devices/platform/soc/112b0000.ufshci/ufssid/">
+			<stream_id_enabled>1</stream_id_enabled>
+		</feature_path>
+</storage_feature>

@@ -1,0 +1,254 @@
+##################################################################################
+### Copyright (C), 2008-2021, OPLUS Mobile Comm Corp., Ltd.
+### Description: XXXXXXXXXXXXXXXXXXXXX.
+### Author: <Chunbo.Gao>
+###
+### ---------------------Revision History: ---------------------
+###  <author>        <data>      <version>       <desc>
+###  <Chunbo.Gao>   2021/09/14      1.0         build this module
+##################################################################################
+
+##Audio
+service audioLogOn /system/system_ext/bin/audiolog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service audioLogOff /system/system_ext/bin/audiolog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##GPS
+service gpsLogOn /system/system_ext/bin/gpslog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service gpsLogOff /system/system_ext/bin/gpslog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Bluetooth
+service bluetoothLogOn /system/system_ext/bin/bluetoothlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service bluetoothLogOff /system/system_ext/bin/bluetoothlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Network
+service networkLogOn /system/system_ext/bin/networklog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service networkLogOff /system/system_ext/bin/networklog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Wlan
+service wlanLogOn /system/system_ext/bin/wlanlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service wlanLogOff /system/system_ext/bin/wlanlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##TouchScreen
+service touchscreenLogOn /system/system_ext/bin/touchscreenlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service touchscreenLogOff /system/system_ext/bin/touchscreenlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Sensor
+service sensorLogOn /system/system_ext/bin/sensorlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service sensorLogOff /system/system_ext/bin/sensorlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Perfermance
+service perfLogOn /system/system_ext/bin/perflog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service perfLogOff /system/system_ext/bin/perflog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##OneTrace
+service onetraceLogOn /system/system_ext/bin/onetracelog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service onetraceLogOff /system/system_ext/bin/onetracelog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##ThirdPart
+service thirdpartLogOn /system/system_ext/bin/thirdpartlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service thirdpartLogOff /system/system_ext/bin/thirdpartlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Fingerprint
+service fingerprintLogOn /system/system_ext/bin/fingerprintlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service fingerprintLogOff /system/system_ext/bin/fingerprintlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Input
+service inputLogOn /system/system_ext/bin/inputlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service inputLogOff /system/system_ext/bin/inputlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Stability
+service stabilityLogOn /system/system_ext/bin/stabilitylog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service stabilityLogOff /system/system_ext/bin/stabilitylog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Camera
+service cameraLogOn /system/system_ext/bin/cameralog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service cameraLogOff /system/system_ext/bin/cameralog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Charge
+service chargeLogOn /system/system_ext/bin/chargelog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service chargeLogOff /system/system_ext/bin/chargelog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+##Power/Heating
+service powerLogOn /system/system_ext/bin/powerlog_manager.sh "logon"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service powerLogOff /system/system_ext/bin/powerlog_manager.sh "logoff"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+
+
+
+

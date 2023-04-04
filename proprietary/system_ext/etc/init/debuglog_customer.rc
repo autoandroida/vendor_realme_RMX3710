@@ -1,0 +1,50 @@
+##################################################################################
+### Copyright 2014 OPLUS Mobile Comm Corp., Ltd.
+### All rights reserved.
+###
+### Description     : Provide a function to critical service
+### History          :( ID, Date, Author, Description)
+### Author: Chunbo.Gao@ANDROID.DEBUG
+##################################################################################
+
+service customer_main /system/system_ext/bin/debuglog_customer.sh "customer_main"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service customer_event /system/system_ext/bin/debuglog_customer.sh "customer_event"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service customer_radio /system/system_ext/bin/debuglog_customer.sh "customer_radio"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service customer_kernel /system/system_ext/bin/debuglog_customer.sh "customer_kernel"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service customer_tcpdump  /system/system_ext/bin/debuglog_customer.sh "customer_tcpdump"
+    class core
+    user root
+    group root system everybody shell
+    disabled
+    oneshot
+service chmod_customer_path /system/system_ext/bin/debuglog_customer.sh "chmod_customer_path"
+    class core
+    user root
+    group root system sdcard_rw
+    disabled
+    oneshot
+

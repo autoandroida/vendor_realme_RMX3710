@@ -1,0 +1,28 @@
+on post-fs-data
+    chmod 0666 /mnt/vendor/persist/data/ec2_aging_data.txt
+service vendor.touch-1-0  /odm/bin/hw/vendor.oplus.hardware.touch@1.0-service
+    class hal
+    user root
+    socket hidl2touchdaemon_client dgram 0660 root inet
+    socket hidl2touchdaemon_server dgram 0660 root inet
+    group root system gps radio inet sdcard_r sdcard_rw inet
+
+on boot
+    chown system system /dev/tp_misc
+    chown system system /proc/touchpanel/tp_fw_update
+    chown system system /proc/touchpanel/oplus_tp_limit_enable
+    chown system system /proc/touchpanel/oplus_tp_direction
+    chown system system /proc/touchpanel/double_tap_enable
+    chown system system /proc/touchpanel/coordinate
+    chown system system /proc/touchpanel/game_switch_enable
+    chown system system /proc/touchpanel/fp_enable
+    chown system system /proc/touchpanel/baseline_test
+    chown system system /proc/touchpanel/kernel_grip_handle
+    chown system system /proc/touchpanel/curved_size
+    chown system system /proc/touchpanel/charge_detect
+    chown system system /proc/touchpanel/wireless_charge_detect
+    chown system system /proc/touchpanel/gesture_support
+    chown root root /odm/bin/hw/vendor.oplus.hardware.touch@1.0-service
+
+on property:ro.boot.mode=charger
+    start vendor.touch-1-0

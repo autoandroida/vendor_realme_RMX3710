@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<check-list>
+    <caller name="system_server" order="1">
+        <boot-file path="/data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml" name="runtime-permissions.xml" type="0" deletable="true" nullable = "false" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0.xml" name="0.xml" type="0" deletable="false" nullable = "false" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/userlist.xml" name="userlist.xml" type="0" deletable="false" nullable = "true" sizeThreshold="20971520"/>
+        <boot-file path="/data/misc_de/0/apexdata/com.android.permission/roles.xml" name="roles.xml" type="0" deletable="true" nullable = "false" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0/settings_global.xml" name="settings_global.xml" type="0" deletable="true" nullable = "true" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0/settings_system.xml" name="settings_system.xml" type="0" deletable="true" nullable = "true" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0/settings_secure.xml" name="settings_secure.xml" type="0" deletable="true" nullable = "true" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0/settings_config.xml" name="settings_config.xml" type="0" deletable="true" nullable = "true" sizeThreshold="20971520"/>
+        <boot-file path="/data/system/users/0/settings_ssaid.xml" name="settings_ssaid.xml" type="0" deletable="true" nullable = "true" sizeThreshold="20971520"/>
+    </caller>
+</check-list>

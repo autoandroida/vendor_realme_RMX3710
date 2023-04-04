@@ -1,0 +1,19 @@
+<filter-conf>
+<version>20221008</version>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.facebook.appmanager</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.facebook.katana</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.facebook.services</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.facebook.system</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">in.amazon.mShop.android.shopping</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.amazon.mShop.android.shopping</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.ss.android.ugc.trill</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.zhiliaoapp.musically</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.th</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.my</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.ph</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.vn</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.id</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">com.shopee.sg</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">in.mohalla.video</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="true" multiuser="true">in.mohalla.sharechat</MultiUserInstallApp>
+</filter-conf>

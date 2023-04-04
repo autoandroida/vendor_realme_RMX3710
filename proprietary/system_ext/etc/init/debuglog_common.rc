@@ -1,0 +1,164 @@
+##################################################################################
+### Copyright 2014 OPLUS Mobile Comm Corp., Ltd.
+### All rights reserved.
+###
+### Description     : Provide a function to critical service
+### History          :( ID, Date, Author, Description)
+### Author: Chunbo.Gao@ANDROID.DEBUG
+##################################################################################
+
+on post-fs-data
+    mkdir /data/debugging 0777 system system
+    mkdir /data/debugging/anr_binder_info 0775 system system
+    mkdir /data/persist_log 0775 system system
+    mkdir /data/persist_log/backup 0775 system system
+    mkdir /data/persist_log/config 0775 system system
+    mkdir /data/persist_log/config/logkit 0775 system system
+    mkdir /data/persist_log/config/modem 0775 system system
+    mkdir /data/persist_log/config/rus 0775 system system
+    mkdir /data/persist_log/criticallog 0775 system system
+    mkdir /data/persist_log/DCS 0775 system system
+    mkdir /data/persist_log/DCS/de 0775 system system
+    mkdir /data/persist_log/DCS/de/OTRTA 0775 system system
+    mkdir /data/persist_log/DCS/en 0775 system system
+    mkdir /data/persist_log/DCS/en/OTRTA 0775 system system
+    mkdir /data/persist_log/TMP 0775 system system
+    mkdir /data/persist_log/TMP/pcm_dump 0755 audioserver audioserver
+
+    #chmod 0777 /data/persist_log/criticallog
+    mount ext4 /mnt/vendor/oplusreserve/media/log/criticalLog /data/persist_log/criticallog bind
+
+on property:persist.sys.assert.state=true
+    start debug_assert_tip
+on property:persist.sys.assert.state=false
+    stop debug_assert_tip
+
+service debug_assert_tip /system/system_ext/bin/asserttip
+    class core
+    user system
+    disabled
+
+service criticallog system/system_ext/bin/criticallog
+   class main
+   user system
+   group system root shell
+
+#-----------------------# collect method #-----------------------#
+service logcat_main /system/system_ext/bin/debuglog_common.sh "logcat_main"
+    class core
+    user system
+    group root system sdcard_rw
+    disabled
+
+service logcat_radio /system/system_ext/bin/debuglog_common.sh "logcat_radio"
+    class core
+    user system
+    group root system
+    disabled
+
+service logcat_event /system/system_ext/bin/debuglog_common.sh "logcat_event"
+    class core
+    user system
+    group root system
+    disabled
+
+service logcat_kernel /system/system_ext/bin/debuglog_common.sh "logcat_kernel"
+    class core
+    user root
+    group root system
+    disabled
+
+service dump_bugreport /system/system_ext/bin/debuglog_common.sh "dump_bugreport"
+    class core
+    user root
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+#-----------------------# transfer method #-----------------------#
+service transfer3 /system/system_ext/bin/transfer_log.sh "transfer_log"
+    class core
+    user root
+    group root system shell everybody log cache radio bluetooth wifi sdcard_rw media_image media_rw ext_data_rw
+    disabled
+    oneshot
+
+service transfer_vendor /system/system_ext/bin/debuglog_common.sh "transfer_data_vendor"
+    class core
+    user root
+    group root system everybody media_rw sdcard_rw
+    disabled
+    oneshot
+
+service transfer_bugreport /system/system_ext/bin/debuglog_common.sh "transfer_bugreport"
+    class core
+    user root
+    group root system
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+service transfer3_dumpSystem /system/system_ext/bin/transfer_log.sh "transfer3_dumpSystem"
+    class core
+    user root
+    group root system everybody sdcard_rw
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+service transfer3_anrtomb /system/system_ext/bin/transfer_log.sh "transfer3_anrtomb"
+    class core
+    user root
+    group root system sdcard_rw everybody
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+#-----------------------# test method #-----------------------#
+service test_transfer_system /system/system_ext/bin/debuglog_common.sh "test_transfer_system"
+    class core
+    user system
+    group root system wifi sdcard_rw
+    disabled
+    oneshot
+
+service test_transfer_root /system/system_ext/bin/debuglog_common.sh "test_transfer_root"
+    class core
+    user root
+    group root system bluetooth wifi everybody media_rw sdcard_rw ext_data_rw log shell
+    disabled
+    oneshot
+
+#-----------------------# utils method #-----------------------#
+service log_observer /system/system_ext/bin/debuglog_common.sh "log_observer"
+    class core
+    user root
+    seclabel u:r:dumpstate:s0
+    group root system bluetooth wifi everybody sdcard_rw
+    disabled
+    oneshot
+
+service moveLog /system/system_ext/bin/debuglog_common.sh "moveLog"
+    class core
+    user root
+    group root system bluetooth wifi everybody media_rw sdcard_rw ext_data_rw
+    disabled
+    oneshot
+
+#for logkit3.0 delete log while giveup
+service deleteLog /system/system_ext/bin/debuglog_common.sh "delete_log"
+    class core
+    user root
+    group root system bluetooth wifi everybody media_rw sdcard_rw ext_data_rw
+    disabled
+    oneshot
+
+service cleanlog /system/system_ext/bin/debuglog_common.sh "clean_log"
+    class core
+    user root
+    group everybody
+    disabled
+    oneshot
+
+
+

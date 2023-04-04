@@ -1,0 +1,188 @@
+{
+  "comment"       : "editable description",
+  "version"       : 20230217,
+  "filter_content": [
+    {
+      "name": "gl_oom",
+      "tag" : ["com.tencent.tmgp.sgame", "com.instagram.android", "com.facebook.katana", "com.facebook.orca", "com.facebook.pages.app", "com.excean.gspace"],
+      "value" : ["128", null, null, null, null, null]
+    },
+    {
+      "name": "brk_s2w",
+      "tag" : [
+        "com.autonavi.minimap", "com.autonavi.amapauto", "cn.bus365.wyc.drivergd", "cn.hznetroute.AAdriver",
+        "com.eamobile.nbajam_na_wf", "com.tuotuo.driver", "com.keubano.zhdz", "com.jsyc.driver", "net.untrip.app.lczcd",
+        "com.CharmingAgencys.nearme.gamecenter", "com.frontline.DesertEscape.nearme.gamecenter", "com.zsfz.zsjmnjs.nearme.gamecenter",
+        "com.yx", "com.smile.gifmaker"
+      ]
+    },
+    {
+      "name": "ui_first_black",
+      "tag" : [
+        "com.icbc.im", "com.bill99.kuaiyishua", "com.andromeda.androbench2", "com.miHoYo.Yuanshen"
+      ]
+    },
+    {
+      "name": "gl_thread_ux",
+      "tag" : [
+        "com.coloros.gallery3d", "com.autonavi.minimap", "com.google.android.apps.maps", "com.snapchat.android",
+        "com.tencent.mobileqq", "com.oppo.camera", "com.oplus.camera", "com.android.chrome", "com.tencent.mm",
+        "com.MobileTicket", "com.UCMobile", "com.UCMobile.intl", "com.baidu.BaiduMap", "com.smile.gifmaker",
+        "com.tencent.qqlive", "com.quora.android", "com.eg.android.AlipayGphone", "com.opera.browser","com.taobao.taobao",
+        "com.chinamworld.main","com.ss.android.article.news","com.tencent.qqmusic", "com.taobao.litetao",
+        "com.zhihu.android","com.taobao.idlefish","nt.mm:appbrand0","com.xunmeng.pinduoduo", "me.ele", "com.sankuai.meituan",
+        "tv.danmaku.bili","com.tencent.mtt","com.jsmcc","com.facebook.katana"
+      ],
+      "value" : [
+        null, null, null, null, null, null, null, null,
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^VizCompositorTh)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"5000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^CrRendererMain)|(^CompositorVizRe)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"2000\", \"mode\":\"repeat\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)|(^CompositorVizRe)\", \"event\":\"to_fore\", \"delay\":\"3000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^map-runloop$)\", \"event\":\"to_fore\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^GLThread \\\\d+$)\", \"event\":\"resume com.yxcorp.gifshow.v3.EditorActivity\", \"delay\":\"2500\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)\", \"event\":\"start com.tencent.qqlive.ona.browser.H5Activity\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_IOThread)|(^VizWebView)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_IOThread)\", \"event\":\"to_fore\", \"delay\":\"2000\"}, {\"op\":\"ux\", \"pattern\":\"(^Chrome_IOThread)|(^VizWebView)\", \"event\":\"resume com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^VizCompositorTh)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^DisplayComposit)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_IOThread)|(^VizWebView)|(^ThreadPoolForeg)\", \"delay\":\"2500\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^VizWebView)|(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^DisplayComposit)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"3000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcGp)|(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^VizWebView)\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^DisplayComposit)\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcGp)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^1.ui)|(^JNISurfaceTextu)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcGp)|(^VizCompositorTh)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcGp)|(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^ThreadPoolForeg)|(^VizWebView)\", \"event\":\"to_fore\", \"delay\":\"5000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_ChildIOT)|(^Chrome_IOThread)|(^DisplayComposit)|(^Compositor$)|(^CompositorTileW)|(^CrGpuMain)\",\"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^VizWebView)|(^Chrome_IOThread)|(^Chrome_ChildIOT$)|(^Compositor$)|(^ThreadPoolForeg$)\", \"event\":\"to_fore\", \"delay\":\"3000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Thread-\\\\d+$)|(^Chronos.Vsync)|(^Chrome_IOThread)|(^Chrome_ChildIOT)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^VizWebView)|(^Chrome_IOThread)|(^Chrome_ChildIOT)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^Chrome_InProcGp)|(^VizWebView)|(^Chrome_IOThread)|(^Chrome_ChildIOT)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]"],
+        "[{\"op\":\"ux\", \"pattern\":\"(^ComponentLayout)|(^CombinedHandler)\", \"delay\":\"3000\"}]"
+    },
+    {
+      "name": "tpd",
+      "tag" : [
+        "com.baidu.searchbox","com.smile.gifmaker", "com.xunmeng.pinduoduo", "com.jingdong.app.mall", "com.taobao.taobao", "com.UCMobile", "com.heytap.browser", "com.android.chrome",
+        "com.tencent.mm","com.ss.android.ugc.aweme","com.tencent.tmgp.sgame","com.ss.android.ugc.aweme.lite","com.tencent.mobileqq","com.tencent.qqlive","com.kuaishou.nebula","com.dragon.read","tv.danmaku.bili","com.ss.android.article.news","com.autonavi.minimap",
+        "com.tencent.tmgp.pubgmhd","com.coloros.gallery3d","com.android.contacts", "com.antutu.ABenchMark"
+      ],
+      "value" : [
+        "[{\"op\":\"tpd 3\", \"pattern\":\"(^Chrome_InProcGp)\", \"event\":\"start_p\", \"delay\":\"2000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21147\",\"op\":\"tpd 3\", \"pattern\":\"(^Pipeline_0)\", \"event\":\"start com.yxcorp.gifshow.camera.record.CameraActivity\", \"delay\":\"2000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"},
+          {\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"resume com.xunmeng.pinduoduo.activity.NewPageActivity\", \"delay\":\"2000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21127|21305\", \"op\":\"tpd 3\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},
+          {\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"20801|20804\", \"op\":\"tpd 1\", \"pattern\":\"(^CrRendererMain)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"},
+          {\"op\":\"ban_app_tpd\", \"event\":\"start_p\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"},
+          {\"op\":\"ban_app_tpd\", \"event\":\"start_p\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"1000\"},{\"project\":\"21001|21201|21631|20846|20847|22811|22861|22862|21131|21321\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"start_p\", \"delay\":\"2000\"}]",
+         "[{\"project\":\"22015|22001|22083|21131|22811|21135|22823\", \"op\":\"tpd 3\", \"pattern\":\"(^HeapTaskDaemon)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]"
+      ]
+    },
+    {
+      "name": "scroll_black",
+      "tag" : [
+        "com.coloros.note"
+      ]
+    },
+    {
+      "name" : "ofb",
+      "tag"  : [
+        "*", "com.andromeda.androbench2", "com.antutu.ABenchMark",
+        "com.autonavi.minimap", "com.google.android.apps.maps", "com.tencent.mobileqq", "com.android.chrome",
+        "com.MobileTicket", "com.UCMobile", "com.UCMobile.intl", "com.baidu.BaiduMap", "com.tencent.qqlive", "com.taobao.taobao", "com.tencent.mm", "com.sina.news", "com.ss.android.article.lite",
+        "com.coloros.assistantscreen", "com.douban.frodo", "com.ss.android.article.news", "ctrip.android.view"
+      ],
+      "value": [
+        "[{\"project\":\"21001\", \"op\":\"app_para sm8450\"}]",
+        "[{\"op\":\"disabled\"}]",
+        "[{\"op\":\"disabled\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(.*)\", \"event\":\"add_gl\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(.*)\", \"event\":\"add_gl\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(.*)\", \"event\":\"add_gl\"},
+          {\"project\":\"22015\", \"op\":\"app_para mobileqq\", \"event\":\"resume com.qzone.feed.ui.activity.QZoneFriendFeedActivity\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(.*)\", \"event\":\"add_gl\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"5000\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^CrRendererMain)|(^CompositorVizRe)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"2000\", \"mode\":\"repeat\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)|(^CompositorVizRe)\", \"event\":\"to_fore\", \"delay\":\"3000\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^map-runloop$)|(^Chrome_InProcGp$)|(^Chrome_ProcessL$)|(^VizWebView$)\", \"event\":\"to_fore\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Compositor$)\", \"event\":\"resume com.tencent.qqlive.ona.browser.H5Activity\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^CrGpuMain$)|(^CrRendererMain)|(^Compositor$)|(^CompositorTileW$)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^CrGpuMain)|(^CrRendererMain)|(^Compositor$)|(^VizCompositorTh$)|(^CompositorTileW$)\", \"event\":\"to_fore\", \"delay\":\"2000\"},
+          {\"project\":\"22803|22001|22811|22861|22863|21135\", \"op\":\"app_para tencentmm\", \"event\":\"to_top\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_IOThread)|(^VizWebView)\", \"event\":\"to_fore\", \"delay\":\"2000\"}, {\"op\":\"task_para def\", \"pattern\":\"(^Chrome_IOThread)|(^VizWebView)|(^Compositor$)|(^Chrome_InProcRe)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^Chrome_InProcRe)|(^Chrome_InProcGp)|(^Chrome_IOThread)|(^Compositor$)|(^VizCompositorTh$)|(^CompositorTileW$)|(^VizWebView)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"project\":\"21001\", \"op\":\"app_para assistantscreen\", \"event\":\"to_top\"}]",
+        "[{\"project\":\"22001\", \"op\":\"task_para def\", \"pattern\":\"(^VizWebView)\":\"event\":\"resume com.douban.frodo.activity.SplashActivity\"}]",
+        "[{\"op\":\"task_para def\", \"pattern\":\"(^VizWebView)|(^Chrome_IOThread)|(^Chrome_ChildIOT)|(^Compositor$)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]",
+        "[{\"op\":\"ux\", \"pattern\":\"(^1.ui)|(^JNISurfaceTextu)\", \"event\":\"to_fore\", \"delay\":\"2000\"}]"
+      ]
+    },
+    {
+      "name" : "ofb_app_para",
+      "tag"  : [
+        "sm8450",
+        "top",
+        "activity",
+        "assistantscreen",
+        "mobileqq",
+        "tencentmm"
+      ],
+      "value": [
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"0\", \"vutil_margin\":\"0\"}",
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"0\", \"vutil_margin\":\"0\"}",
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"0\", \"vutil_margin\":\"0\"}",
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"30\", \"vutil_margin\":\"0\"}",
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"30\", \"vutil_margin\":\"0\"}",
+        "{\"boost_freq\":\"0\", \"boost_migr\":\"30\", \"vutil_margin\":\"0\"}"
+      ]
+    },
+    {
+      "name" : "ofb_task_para",
+      "tag"  : [
+        "def"
+      ],
+      "value": [
+        "{\"depth\":\"0\", \"width\":\"0\"}"
+      ]
+    },
+    {
+      "name" : "uag",
+      "tag"  : [
+        "def"
+      ],
+      "value" : [
+        "[{\"project\":\"21131\", \"gov\":\"walt\"},
+          {\"project\":\"21001\", \"audio_perf\":\"0\"}]"
+      ]
+    }
+  ]
+}

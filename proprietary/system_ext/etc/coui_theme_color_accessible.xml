@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <group>
+        <child id="1" name="Green">
+            <color name="coui_color_primary_green">#FF368645</color>
+            <color name="coui_color_secondary_green">#FF26368645</color>
+            <color name="coui_color_primary_text_green">#FF368645</color>
+            <color name="coui_color_primary_on_popup_green">#FF368645</color>
+            <color name="couiGreenTintControlNormal">#FF368645</color>
+            <color name="couiGreenTintControlPressed">#FF0D914F</color>
+            <color name="pb_color_theme_green">#FF368645</color>
+        </child>
+        <child id="2" name="Red">
+            <color name="coui_color_primary_red">#FFD53733</color>
+            <color name="coui_color_secondary_red">#26D53733</color>
+            <color name="coui_color_primary_text_red">#FFD53733</color>
+            <color name="coui_color_primary_on_popup_red">#FFD53733</color>
+        </child>
+        <child id="3" name="Yellow">
+            <color name="coui_color_primary_yellow">#FF996A11</color>
+            <color name="coui_color_secondary_yellow">#26996A11</color>
+            <color name="coui_color_primary_text_yellow">#FF996A11</color>
+            <color name="coui_color_primary_on_popup_yellow">#FF996A11</color>
+            <color name="couiYellowTintControlNormal">#FF996A11</color>
+            <color name="couiYellowTintControlPressed">#FFB3751C</color>
+        </child>
+        <child id="5" name="Orange">
+            <color name="coui_color_primary_orange">#FFC05730</color>
+            <color name="coui_color_secondary_orange">#26C05730</color>
+            <color name="coui_color_primary_text_orange">#FFC05730</color>
+            <color name="coui_color_primary_on_popup_orange">#FFC05730</color>
+        </child>
+    </group>
+</resources>

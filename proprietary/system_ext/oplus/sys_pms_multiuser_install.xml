@@ -1,0 +1,26 @@
+<filter-conf>
+<version>20220316</version>
+    <MultiUserInstallApp multisystem="false">com.oplus.deepthinker</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.crashbox</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.qualityprotect</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.onetrace</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.sceneservice</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.assistantscreen</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.directui</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.shortcuts</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.colordirectservice</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.personalassistant</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.digitalwellbeing</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.ocrscanne</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oppo.lfeh</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.focusmode</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.familyguard</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.smartdrive</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.ota</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.sau</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.oplus.customize.coreapp</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.heytap.cloud</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.findphone.client2</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.findmyphone</MultiUserInstallApp>
+    <MultiUserInstallApp multisystem="false">com.coloros.favorite</MultiUserInstallApp>
+</filter-conf>

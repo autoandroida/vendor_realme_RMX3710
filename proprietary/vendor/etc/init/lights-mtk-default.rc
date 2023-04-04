@@ -1,0 +1,9 @@
+on boot
+    mkdir /data/vendor/liblight 0771 system system
+    chmod 0777 /data/vendor/liblight/oplusLights.xml
+
+service vendor.light-default /vendor/bin/hw/android.hardware.lights-service.mediatek
+    class hal
+    user system
+    group system
+    shutdown critical

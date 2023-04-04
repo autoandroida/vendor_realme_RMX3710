@@ -1,0 +1,23 @@
+on early-boot
+    chown system system /dev/oplus_display
+    chmod 0644 /dev/oplus_display
+    chown system system /sys/kernel/oplus_display/dsi_cmd
+    chown system system /sys/kernel/oplus_display/dim_alpha
+    chown system system /sys/kernel/oplus_display/dim_dc_alpha
+    chown system system /sys/kernel/oplus_display/ccd_check
+    chown system system /sys/kernel/oplus_display/audio_ready
+    chown system system /sys/kernel/oplus_display/dimlayer_set_bl
+    chown system system /sys/kernel/oplus_display/dynamic_osc_clock
+    chown system system /sys/kernel/oplus_display/notify_panel_blank
+    chown system system /sys/kernel/oplus_display/roundcorner
+    chown system system /sys/kernel/oplus_display/vsync_switch
+    chown system system /sys/kernel/oplus_display/adfr_debug
+    chown system system /sys/kernel/oplus_display/oplus_brightness
+    chown system system /sys/kernel/oplus_display/oplus_max_brightness
+    chown root root /sys/kernel/oplus_display/panel_id
+    chown root root /sys/kernel/oplus_display/panel_serial_number
+    write /sys/kernel/tracing/events/sde/enable 1
+service displaypanelfeature-1-0 /odm/bin/hw/vendor.oplus.hardware.displaypanelfeature@1.0-service
+    class hal animation
+    user system
+    group system

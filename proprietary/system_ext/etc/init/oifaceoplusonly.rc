@@ -1,0 +1,50 @@
+service oiface /system_ext/bin/oifaceoplusonly
+	class hal
+	user system
+	group system readproc root
+	capabilities SYS_NICE
+	disabled
+
+on init
+    chmod 0755 /dev/cpuset
+    chown system system /dev/stune/top-app/schedtune.boost
+    chmod 0664 /dev/stune/top-app/schedtune.boost
+    chown system system /dev/cpuctl/top-app/cpu.uclamp.min
+    chmod 0664 /dev/cpuctl/top-app/cpu.uclamp.min
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/target_loads
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy0/schedutil/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/schedutil/target_loads
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy4/schedutil/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/schedutil/target_loads
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy6/schedutil/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy7/schedutil/target_loads
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy7/schedutil/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+    chown system system /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
+    chmod 0666 /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
+
+on property:sys.boot_completed=1 && property:persist.sys.oiface.enable=0
+	stop oiface
+
+on property:sys.boot_completed=1 && property:persist.sys.oiface.enable=1
+	start oiface
+
+on property:sys.boot_completed=1 && property:persist.sys.oiface.enable=2
+	start oiface

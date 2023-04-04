@@ -1,0 +1,107 @@
+<data_normalization_config version="1">
+    <internal>
+        <!-- reserved -->
+        <dir source="/data/oppo" target="/data/oplus" />
+        <dir source="/data/oppo/coloros" target="/data/oplus/os" />
+
+        <!-- sunmingyu -->
+        <dir source="/data/oppo/coloros/bpm" target="/data/oplus/os/bpm" />
+
+        <!-- taolicheng -->
+        <file source="/data/oppo/coloros/config/sys_pms_defaultpackage_list.xml" target="/data/oplus/os/config/sys_pms_defaultpackage_list.xml" />
+        <file source="/data/oppo/coloros/config/sys_pms_forbiduninstall_data_pkg_list.xml" target="/data/oplus/os/config/sys_pms_forbiduninstall_data_pkg_list.xml" />
+        <file source="/data/oppo/coloros/dataupdate/manual_package_operation.xml" target="/data/oplus/os/dataupdate/manual_package_operation.xml" />
+        <file source="/data/oppo/coloros/removableapp/removable_app_state.xml" target="/data/oplus/os/removableapp/removable_app_state.xml" />
+        <file source="/data/oppo/common/notLaunchedPkgs.xml" target="/data/oplus/common/notLaunchedPkgs.xml" />
+        <file source="/data/oppo/common/pm/extra_app_info.xml" target="/data/oplus/common/pm/extra_app_info.xml" />
+
+        <!-- tanzhengpeng -->
+        <file source="/data/oppo/coloros/instant1/backup_hosts" target="/data/oplus/instant1/backup_hosts" />
+        <file source="/data/oppo/coloros/permission/vpn_filter.xml" target="/data/system/vpn_filter.xml" />
+
+        <dir source="/data/oppo/coloros/startup" target="/data/oplus/os/startup">
+            <!-- wuzhikai -->
+            <subFile relativeSource="bootallow.txt" relativeTarget="bootallow.txt" />
+            <subFile relativeSource="bootoption.txt" relativeTarget="bootoption.txt" />
+            <subFile relativeSource="associate_startup_whitelist.txt" relativeTarget="associate_startup_whitelist.txt" />
+            <subFile relativeSource="fixedRecord.txt" relativeTarget="fixedRecord.txt" />
+            <subFile relativeSource="bootfixed.txt" relativeTarget="bootfixed.txt" />
+
+            <!-- cenxinyu -->
+            <subFile relativeSource="sys_rom_black_list.xml" relativeTarget="sys_rom_black_list.xml" />
+            <subFile relativeSource="sys_startupmanager_monitor_list.xml" relativeTarget="sys_startupmanager_monitor_list.xml" />
+            <subFile relativeSource="startup_manager.xml" relativeTarget="startup_manager.xml" />
+
+            <!-- dinghongzhi -->
+            <subFile relativeSource="associate_startup_default_list.xml" relativeTarget="associate_startup_default_list.xml " />
+            <subFile relativeSource="broadcast_action_white.txt" relativeTarget="broadcast_action_white.txt" />
+            <subFile relativeSource="sps_list.txt" relativeTarget="sps_list.txt" />
+            <subFile relativeSource="associate_startup_whitelist.txt " relativeTarget="associate_startup_whitelist.txt " />
+            <subFile relativeSource="broadcastlist.xml" relativeTarget="broadcastlist.xml" />
+            <subFile relativeSource="startup_manager.xml" relativeTarget="startup_manager.xml" />
+            <subFile relativeSource="autoSyncWhiteList.txt " relativeTarget="autoSyncWhiteList.txt " />
+            <subFile relativeSource="browserWhiteList.txt" relativeTarget="browserWhiteList.txt" />
+            <subFile relativeSource="sys_rom_black_list.xml" relativeTarget="sys_rom_black_list.xml" />
+            <subFile relativeSource="bootallow.txt " relativeTarget="bootallow.txt " />
+            <subFile relativeSource="game_pay_monitor_config.xml" relativeTarget="game_pay_monitor_config.xml" />
+            <subFile relativeSource="sys_startupmanager_monitor_list.xml" relativeTarget="sys_startupmanager_monitor_list.xml" />
+            <subFile relativeSource="bootoption.txt" relativeTarget="bootoption.txt" />
+            <subFile relativeSource="hide_white_list.xml" relativeTarget="hide_white_list.xml" />
+            <subFile relativeSource="bootwhitelist.txt" relativeTarget="bootwhitelist.txt" />
+        </dir>
+
+        <!-- chengzhengrong -->
+        <dir source="/data/oppo/coloros/multiapp" target="/data/oplus/os/multiapp">
+            <subFile relativeSource="oppo_multi_app_alias.xml" relativeTarget="multi_app_alias.xml" />
+            <subFile relativeSource="sys_multi_app_config.xml" relativeTarget="sys_multi_app_config.xml" />
+        </dir>
+        <dir source="/data/oppo/coloros/userid_placeholder" target="/data/oplus/os/userid_placeholder" />
+
+        <!-- liuboning -->
+        <file source="/data/system/oppo-encryption-packages.xml" target="/data/system/oplus-encryption-packages.xml" />
+
+        <!-- baiyu -->
+        <dir source="/data/oppo/uxicons" target="/data/oplus/uxicons" normalizeIfTargetExists="true" />
+        <dir source="/data/oppo/language" target="/data/oplus/language" normalizeIfTargetExists="true" />
+
+        <!-- cenxinyu -->
+        <dir source="/data/oppo/coloros/oppoguardelf" target="/data/oplus/os/battery" normalizeIfTargetExists="true" />
+        <dir source="/data/oppo/coloros/config" target="/data/oplus/os/config/">
+            <subFile relativeSource="systemConfigList.xml" relativeTarget="systemConfigList.xml" />
+            <subFile relativeSource="crashclear_white_list.xml" relativeTarget="crashclear_white_list.xml" />
+            <subFile relativeSource="adb_installer_status.xml" relativeTarget="adb_installer_status.xml" />
+            <subFile relativeSource="sys_pms_defaultpackage_list.xml" relativeTarget="sys_pms_defaultpackage_list.xml" />
+            <subFile relativeSource="third_app_dex_list.xml" relativeTarget="third_app_dex_list.xml" />
+            <subFile relativeSource="sys_wms_intercept_window.xml" relativeTarget="sys_wms_intercept_window.xml" />
+            <subFile relativeSource="sys_ams_skipbroadcast.xml" relativeTarget="sys_ams_skipbroadcast.xml" />
+            <subFile relativeSource="sys_wms_split_app.xml" relativeTarget="sys_wms_split_app.xml" />
+        </dir>
+
+        <!-- sunwenjun -->
+        <dir source="/data/oppo/coloros/darkmode/open_app" target="/data/oplus/os/darkmode/open_app" normalizeIfTargetExists="true" />
+        <dir source="/data/oppo/coloros/darkmode/click_app" target="/data/oplus/os/darkmode/click_app" normalizeIfTargetExists="true" />
+
+        <!-- lizhijian -->
+        <file source="/data/system/opponetworkingcontrolpolicy.xml" target="/data/system/networkingcontrolpolicy.xml" optionalUid="system" optionalGid="system" />
+
+        <!-- meixiaohu -->
+        <file source="/data/oppo/coloros/securepay/enabledapp.xml" target="/data/oplus/os/securepay/enabledapp.xml" />
+
+        <!-- yanghongwu -->
+        <dir source="/data/theme/applying" target="/data/theme/applying" optionalUid="com.oplus.uxdesign" optionalGid="com.oplus.uxdesign" normalizeIfTargetExists="true" />
+        <dir source="/data/theme/applying/userid_placeholder" target="/data/theme/applying/userid_placeholder" optionalUid="com.oplus.uxdesign" optionalGid="com.oplus.uxdesign" normalizeIfTargetExists="true" />
+        <dir source="/data/theme/userid_placeholder" target="/data/theme/userid_placeholder" optionalUid="com.oplus.uxdesign" optionalGid="com.oplus.uxdesign" normalizeIfTargetExists="true" />
+
+        <!-- xiechuyuan -->
+        <dir source="/data/theme/store" target="/data/theme/store" optionalUid="com.heytap.themestore" optionalGid="com.heytap.themestore" normalizeIfTargetExists="true" />
+        <dir source="/data/theme/userid_placeholder/store" target="/data/theme/userid_placeholder/store" optionalUid="com.heytap.themestore" optionalGid="com.heytap.themestore" normalizeIfTargetExists="true" />
+
+        <!-- liuchangchang -->
+        <dir source="/data/ota_package/OTA" target="/data/ota_package/OTA" optionalUid="com.oplus.ota" optionalGid="com.oplus.ota" normalizeIfTargetExists="true" />
+        <dir source="/data/ota_package/recovery" target="/data/ota_package/recovery" optionalUid="com.oplus.ota" optionalGid="com.oplus.ota" normalizeIfTargetExists="true" />
+    </internal>
+
+    <external>
+        <!-- put the external data normalization configs here -->
+    </external>
+</data_normalization_config>

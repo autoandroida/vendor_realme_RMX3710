@@ -1,0 +1,5 @@
+<oplus-config>
+    <!-- ZhangJiashu@ANDROID.MULTIUSER, 2022/05/11, add for monitor multi app user's errors-->
+    <oplus-feature name="oplus.software.multiapp.error_monitor" />
+    <!-- ZhangJiashu@ANDROID.MULTIUSER, 2022/05/11, add end -->
+</oplus-config>

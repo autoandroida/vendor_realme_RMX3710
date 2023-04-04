@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filter-conf>
+<version>2022030301</version>
+<isOpen>1</isOpen>
+	<filter-name>sys_appmanager_config</filter-name>
+	<lowmem_delay_restart_app packageName="com.oplus.onetrace" restartTime="300"/>
+	<lowmem_delay_restart_app packageName="com.coloros.floatassistant" restartTime="300"/>
+	<lowmem_delay_restart_app packageName="com.coloros.sceneservice" restartTime="300"/>
+	<lowmem_delay_restart_app packageName="com.coloros.colordirectservice" restartTime="300"/>
+
+	<lowmem_config threshold = "2:400|3:400|4:400|6:600|8:900|12:1000|16:1000"/>
+</filter-conf>
+

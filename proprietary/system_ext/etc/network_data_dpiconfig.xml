@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datadpiromupdate>
+    <version>2022070600</version>
+
+    <defualtconfig>
+        <DPI_APPS>com.tencent.tmgp.sgame;com.oplus.logkit;com.heytap.market</DPI_APPS>
+    </defualtconfig>
+</datadpiromupdate>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filter-conf>
+    <version>20210101</version>
+    <isOpen>1</isOpen>
+    <filter-name>sys_secrecy_switch_list</filter-name>
+    <support>true</support>
+    <activity_sw>false</activity_sw>
+    <log_sw>false</log_sw>
+    <adb_sw>true</adb_sw>
+    <test_sw>false</test_sw>
+    <!-- Time out for mac 24 * 60 min -->
+    <mac_timeout>1440</mac_timeout>
+    <!-- Time out for id 24 * 60 min -->
+    <id_timeout>1440</id_timeout>
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.EngineeringMode" />
+    <!-- *#8778# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.manualtest.MasterClear" />
+    <!-- *#37847# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.device.DeviceListActivity" />
+    <!-- *#649010# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.development.DiagEnabled" />
+    <!-- *#268# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.nvbackupui.NVBackupUI" />
+    <!-- *#818#/*#838# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.networksearch.NetworkSearchNew" />
+    <!-- *#727# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.sartest.SarTestActivity" />
+    <!-- *#7332# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.rftoolkit.RfToolkitFactory" />
+    <!-- *#7328# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.rftoolkit.RfToolkitAgingTest" />
+    <!-- *#804# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.networksearch.NetworkSearch" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.networksearch.NetworkSearchNew" />
+    <!-- *#872# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.development.UsbPreloaderEnabled" />
+    <!-- *#391# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.others.SwitchSoftwareVersion" />
+    <!-- *#*#88#*#* -->
+    <activity packageName="com.factory.mmigroup"  className="com.factory.mmigroup.MMIGroupNormalMode" />
+    <!-- *#*#86#*#* -->
+    <activity packageName="com.factory.mmigroup"  className="com.factory.mmigroup.MMIGroupMenu" />
+    <!-- Ant debug toolkit -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.antennatest.AntDebugToolBox" />
+    <!-- ASDIV state display -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.antennatest.ASDIVSettingsActivity" />
+    <!-- GSM Power Settings -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.powerantennatuning.GsmPwrSetting" />
+    <!-- RF MIPI device test -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.missingrffe.MissingRFFEActivity" />
+    <!-- Tx power back-off control -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.sartest.SarControl" />
+    <!-- Communication Debugging -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.network.manualtest.StanCurTest" />
+    <!-- ForceAntennaForLabTest -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.powerantennatuning.ForceAntennaForLabTest" />
+    <!-- MaxTxPowerTuning -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.powerantennatuning.MaxTxPowerTuning" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.MultNetworkModeSet" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.BandMode2" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.bandinfo.BandSelectionActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.EngineerNetworkItemsSet" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.radioinfo.RadioInfoActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.radioinfo.RadioInfoActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.LteCaStatusActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.castatus.LteCaStatusActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusFilterCsfbArfcn" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.call.filtercsfb.FilterCsfbArfcnActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusLockGSMArfcn" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusLockLteArfcn" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.lockcellinfo.LockCellInfoActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusCheckVolteFr1Fr2Feature" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.LteBandMode" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.bandinfo.LteBandModeActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusFastDormancy" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.data.OplusFastDormancy" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.CfuActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.call.CfuActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.DeviceMgr" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.others.DeviceMgr" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.AutoAnswer" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.call.autoanswer.AutoAnswer" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.ProtocolTestSwitcher" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusMtuActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.data.OplusMtuActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusLTEOnlyFullBandTestActivity" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusSignalSmooth" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.OplusSignalSmooth" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusEnable4gSwitch" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.PLMNListPreference" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.register.PlmnListPreference" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.development.AutoFillSmsContacts" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.nvbackupui.NVBackupUI" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.nvbackupui.OplsNVBackupUI" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.nvbackupui.QualCommNv2" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.nvbackupui.CalibrateStatus" />
+    <!-- *#36446337# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.OplusEnableHotswapSwitch" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.wifi.manualtest.WifiFTMActivity" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.RebootManager" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.wireless.WifiSocketHelper" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.wireless.WifiAdbHelper" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.wireless.SwitchWifiAdbHelper" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.wireless.SwitchMetaModeHelper" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.DetectMasterClearResult" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.SwitchColorActivation" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.ShowRemoteMessage" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.ResetTestMark" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.manualtest.modeltest.ModelTestImpl" />
+    <!-- *#8168#/*#8398# -->
+    <activity packageName="com.oplus.engineernetwork"  className="com.oplus.engineernetwork.rf.cmccevaluation.CmccEvaluationOTA" />
+    <activity packageName="com.oplus.engineermode"  className="com.oplus.engineermode.aftersale.SwitchRegionAssistant" />
+    <!-- *#*#4636#*#* -->
+    <activity packageName="com.android.settings"  className="com.android.settings.Settings$TestingSettingsActivity" />
+    <!--*#*#3646633#*#*-->
+    <activity packageName="com.mediatek.engineermode"  className="com.mediatek.engineermode.EngineerMode" />
+</filter-conf>

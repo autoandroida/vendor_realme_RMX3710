@@ -1,0 +1,10 @@
+#ifdef OPLUS_FEATURE_WIFI_SNIFFER
+#LiangXiao@CONNECTIVITY.WIFI.BASE, 2020/03/24, Add for wifi sniffer service
+
+service oplus_wifi_service /odm/bin/hw/vendor.oplus.hardware.wifi@1.1-service
+    class hal
+    user root
+    group wifi system net_admin
+    capabilities NET_ADMIN NET_RAW SYS_MODULE
+
+#endif /* OPLUS_FEATURE_WIFI_SNIFFER */

@@ -1,0 +1,15 @@
+#for the development version, do not disable debuggerd and allow "aee mode 3"
+on early-init && property:ro.debuggable=1
+    setprop debug.debuggerd.disable 0
+    setprop ro.vendor.aee.enforcing no
+
+#for the userdebug development version, do not disable debuggerd when direct coredump enable
+on property:persist.vendor.aeev.core.direct=enable
+    setprop debug.debuggerd.disable 0
+
+#for the userdebug development version, direct coredump will be default enabled
+#for the user development version, use native coredump
+#for the release version, mini dump will be default enabled
+on early-init && property:ro.debuggable=1 && property:ro.build.type=user
+    setprop persist.vendor.aeev.core.direct disable
+    setprop persist.vendor.aeev.core.dump enable

@@ -1,0 +1,36 @@
+##################################################################################
+### OPLUS_FEATURE_LOGKIT, OPLUS All rights reserved.
+###
+### File: - init.oplus.upgradebeta.rc
+### Author: jiangyi03@oppo.com
+###
+### ------------------------------- Revision History: ----------------------------
+### <author>                        <data>       <version>   <desc>
+### ------------------------------------------------------------------------------
+### jiangyi03@jiangyi03@oppo.com   2022-05-21               Create this file
+##################################################################################
+#JiangYi 2022/5/23, Add for upgradebeta type init
+
+service initupgradebeta /system/system_ext/bin/upgradebeta.sh "initupgradebeta"
+    class core
+    user system
+    group root system
+    disabled
+    oneshot
+
+service resetusertype /system/system_ext/bin/upgradebeta.sh "resetusertype"
+    class core
+    user system
+    group root system
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1 && property:ro.oplusupgrade.alpha.version=true
+   update_upgrade_usertype_property ${persist.sys.oplusupgrade.user.type}
+
+#for factoryreset
+on property:persist.sys.oplusupgrade.oplusreserve=* && property:oplus.device.firstboot=1
+    start initupgradebeta
+
+on property:persist.sys.oplusupgrade.user.type=*
+    start resetusertype

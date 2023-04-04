@@ -1,0 +1,127 @@
+on post-fs-data
+    mkdir /data/persist_log 0755 system system
+    mkdir /data/persist_log/olc 0775 system system
+
+service olc_get_main_log /system/system_ext/bin/oplus_log_olc.sh "get_main_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+service olc_get_radio_log /system/system_ext/bin/oplus_log_olc.sh "get_radio_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+service olc_get_events_log /system/system_ext/bin/oplus_log_olc.sh "get_events_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+service olc_get_system_log /system/system_ext/bin/oplus_log_olc.sh "get_system_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+service olc_get_kernel_log /system/system_ext/bin/oplus_log_olc.sh "get_kernel_log"
+    class core
+    user root
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#Laixin add for bt hci log
+service olc_get_bt_hci_log /system/system_ext/bin/oplus_log_olc.sh "get_hci_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw bluetooth
+    disabled
+    oneshot
+
+#add for getting shutdown_detect log
+service olc_get_shutdown_detect_log /system/system_ext/bin/oplus_log_olc.sh "get_shutdown_detect_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw bluetooth
+    disabled
+    oneshot
+
+service olc_get_mtk_rebootdb_log /system/system_ext/bin/oplus_log_olc.sh "get_mtk_rebootdb_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#ZhangChong1 add for getting theia log
+service olc_get_theia_log /system/system_ext/bin/oplus_log_olc.sh "get_theia_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#chenliyun add for bt ssrdump log
+service olc_get_bt_ssrdump_log /system/system_ext/bin/oplus_log_olc.sh "get_ssrdump_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw bluetooth
+    disabled
+    oneshot
+
+#peng.yao, add for phoenix log
+service olc_get_phoenix_log /system/system_ext/bin/oplus_log_olc.sh "get_phoenix_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#add for getting qcom minidump log
+service olc_get_minidump_log /system/system_ext/bin/oplus_log_olc.sh "get_minidump_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw bluetooth
+    disabled
+    oneshot
+
+#add for copy logs. refer to oidtlogs
+service olc_copy_logs /system/system_ext/bin/oplus_log_olc.sh "copy_logs"
+    class core
+    user root
+    group root system shell sdcard_rw everybody media_rw ext_data_rw
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+#ZhangChong1 add for getting hecate log
+service olc_get_hecate_log /system/system_ext/bin/oplus_log_olc.sh "get_hecate_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#ZhangChong1 add for getting nwatchcall log
+service olc_get_nwatchcall_log /system/system_ext/bin/oplus_log_olc.sh "get_nwatchcall_log"
+    class core
+    user system
+    group root system sdcard_rw shell everybody media_rw ext_data_rw
+    disabled
+    oneshot
+
+#add for dealing with log too large exception
+service olc_deal_log_too_large /system/system_ext/bin/oplus_log_olc.sh "deal_log_too_large"
+    class core
+    user root
+    seclabel u:r:dumpstate:s0
+    group root system bluetooth wifi everybody sdcard_rw
+    disabled
+    oneshot

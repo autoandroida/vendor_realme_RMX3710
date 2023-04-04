@@ -1,0 +1,18 @@
+on early-init
+    exec_start lowram_device_setup
+    trigger performance_prop_set
+
+service lowram_device_setup /odm/bin/oplus_performance.sh "lowram_device_setup"
+    class core
+    user root
+    group root system
+    disabled
+    oneshot
+
+on performance_prop_set
+    setprop dalvik.vm.heapminfree ${vendor.oplus.dalvik.vm.heapminfree}
+    setprop dalvik.vm.heapmaxfree ${vendor.oplus.dalvik.vm.heapmaxfree}
+    setprop dalvik.vm.heapstartsize ${vendor.oplus.dalvik.vm.heapstartsize}
+    setprop dalvik.vm.heapsize ${vendor.oplus.dalvik.vm.heapsize}
+    setprop dalvik.vm.heapgrowthlimit ${vendor.oplus.dalvik.vm.heapgrowthlimit}
+    setprop ro.config.oplus.low_ram ${ro.vendor.config.oplus.low_ram}

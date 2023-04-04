@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- appplatform using these packages to sau update -->
+
+<config>
+    <appplatform-package name="com.coloros.findmyphone"/>
+    <appplatform-package name="com.coloros.weather2"/>
+    <appplatform-package name="com.coloros.filemanager"/>
+    <appplatform-package name="com.coloros.phonemanager"/>
+    <appplatform-package name="com.coloros.video"/>
+    <appplatform-package name="com.heytap.market"/>
+    <appplatform-package name="com.heytap.cloud"/>
+    <appplatform-package name="com.heytap.speechassist"/>
+    <appplatform-package name="com.heytap.quicksearchbox"/>
+</config>

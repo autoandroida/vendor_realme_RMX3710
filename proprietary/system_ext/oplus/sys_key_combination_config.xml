@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KeyCombination version="1">
+    <!--
+    SHORTCUT_CODE_CTRL = 0x00000001;
+    SHORTCUT_CODE_SHIFT = 0x00000002;
+    SHORTCUT_CODE_ALT = 0x00000004;
+    SHORTCUT_CODE_SEARCH = 0x00000008;
+    SHORTCUT_CODE_WIN = 0x00000010;
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010" keyCode="int">
+        <appInfo
+          type="activity|service|broadcast|customize"
+          pkgName="string"
+          className="string"
+          action="string"
+          category="string"
+          launchMode="zoom|split_screen|pip"
+          flags="00000001"
+          extras="key1:value1|key2:values2|key3:values3"
+        />
+    </RuleInfo>
+    -->
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010"/>
+        <appInfo
+          type="customize"
+          action="speech"
+        />
+    </RuleInfo>
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010" keyCode="47"/> <!-- S -->
+        <appInfo
+          type="activity"
+          pkgName="com.heytap.quicksearchbox"
+          className="com.heytap.quicksearchbox.ui.activity.SearchHomeActivity"
+          action="android.search.action.GLOBAL_SEARCH"
+          flags="10000000"
+        />
+    </RuleInfo>
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010" keyCode="34"/> <!-- F -->
+        <appInfo
+          type="activity"
+          pkgName="com.coloros.filemanager"
+          className="com.oplus.filemanager.main.ui.MainActivity"
+          action="android.intent.action.MAIN"
+          category="android.intent.category.LAUNCHER"
+          flags="10200000"
+        />
+    </RuleInfo>
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010" keyCode="31"/> <!-- C -->
+        <appInfo
+          type="activity"
+          action="oplus.intent.action.CALCULATOR"
+          flags="14000000"
+          extras="start_mode:start_mode_float_window|source:from_smart_sidebar"
+        />
+    </RuleInfo>
+    <RuleInfo>
+        <shortcutInfo shortcutCode="00000010" keyCode="29"/> <!-- A -->
+        <appInfo
+          type="customize"
+          action="screenshot"
+          extras="type:1|source:2"
+        />
+    </RuleInfo>
+</KeyCombination>

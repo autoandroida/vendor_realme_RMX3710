@@ -1,0 +1,14 @@
+
+on property:persist.sys.alwayson.enable=true
+   start mlogd
+
+on property:persist.sys.alwayson.enable=false
+   stop mlogd
+
+service mlogd /system/system_ext/bin/mlogd
+    class main
+    user root
+    group system root shell
+    disabled
+
+

@@ -1,0 +1,54 @@
+on post-fs-data
+    exec u:r:engineer_vendor_daemon:s0 radio system -- /odm/bin/engineer_vendor_shell.sh addRadioFile
+
+    mkdir /mnt/vendor/persist/engineermode
+    chown system system /mnt/vendor/persist/engineermode
+    chmod 0775 /mnt/vendor/persist/engineermode
+    chmod 0775 /mnt/vendor/persist/engineermode/engineermode_config
+    chmod 0644 /mnt/vendor/persist/engineermode/ENG_RESULT
+    mkdir /mnt/vendor/persist/engineermode/config
+    chown system system /mnt/vendor/persist/engineermode/config
+    chmod 0775 /mnt/vendor/persist/engineermode/config
+    chown system system /mnt/vendor/persist/engineermode/config/aging.cfg
+    chmod 0644 /mnt/vendor/persist/engineermode/config/aging.cfg
+    chown system system /mnt/vendor/persist/engineermode/config/test.cfg
+    chmod 0644 /mnt/vendor/persist/engineermode/config/test.cfg
+    mkdir /mnt/vendor/persist/engineermode/test_data
+    mkdir /mnt/vendor/persist/engineermode/test_record
+    chown system system /mnt/vendor/persist/engineermode/test_data
+    chown system system /mnt/vendor/persist/engineermode/test_record
+    chmod 0775 /mnt/vendor/persist/engineermode/test_data
+    chmod 0775 /mnt/vendor/persist/engineermode/test_record
+
+    mkdir /mnt/vendor/persist/camera
+    chown system system /mnt/vendor/persist/camera
+    chmod 0775 /mnt/vendor/persist/camera
+    restorecon /mnt/vendor/persist/camera
+    mkdir /mnt/vendor/persist/camera/dual_calibration
+    chown system system /mnt/vendor/persist/camera/dual_calibration
+    chmod 0775 /mnt/vendor/persist/camera/dual_calibration
+    mkdir /mnt/vendor/persist/camera/front_dual_calibration
+    chown system system /mnt/vendor/persist/camera/front_dual_calibration
+    chmod 0775 /mnt/vendor/persist/camera/front_dual_calibration
+    restorecon /mnt/vendor/persist/camera/*
+
+    mkdir /mnt/vendor/oplusreserve/factory
+    chown system system /mnt/vendor/oplusreserve/factory
+    chmod 0775 /mnt/vendor/oplusreserve/factory
+
+on property:sys.boot_completed=1
+    # FM Radio device node
+    chmod 0666 /dev/fm
+
+on property:vendor.oplus.quit.atm=true
+    setprop persist.vendor.atm.mdmode normal
+    setprop persist.vendor.meta.connecttype usb
+    setprop persist.vendor.service.atci.atm_mode 0
+    stop meta_tst
+
+on property:vendor.oplus.engineermode.chargeswitch.usb=1
+    write /sys/class/udc/musb-hdrc/device/cmode 1
+
+on property:vendor.oplus.engineermode.chargeswitch.usb=0
+    write /sys/class/udc/musb-hdrc/device/cmode 0
+

@@ -1,0 +1,626 @@
+{
+  "comment": "alipay_support",
+  "version": 20200828,
+  "public": [
+    {
+      "ifaaModel": "realme-R9795",
+      "oppoModel": [
+        "RMX2071",
+        "RMX2072",
+        "RMX2073",
+        "RMX2075",
+        "RMX2076"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA601",
+      "oppoModel": [
+        "RMX2121",
+        "RMX2126"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA702",
+      "oppoModel": [
+        "RMX2202",
+        "RMX3220",
+        "RMX3221"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA631",
+      "oppoModel": [
+        "RMX2175",
+        "RMX2176",
+        "RMX2173",
+        "RMX2174",
+        "RMX2179",
+        "RMX3091",
+        "RMX3092",
+        "RMX3093",
+        "RMX2177"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA611",
+      "oppoModel": [
+        "RMX2111",
+        "RMX2112",
+        "RMX2117"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA645",
+      "oppoModel": [
+        "RMX3115",
+        "RMX3116",
+        "RMX3117",
+        "RMX3118"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA651",
+      "oppoModel": [
+        "RMX3121",
+        "RMX3122",
+        "RMX3123",
+        "RMX3052",
+        "RMX3041",
+        "RMX3042",
+        "RMX3043",
+        "RMX3241",
+        "RMX3381",
+        "RMX3242"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA669",
+      "oppoModel": [
+        "RMX3161"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA21651",
+      "oppoModel": [
+        "RMX3357"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA615",
+      "oppoModel": [
+        "RMX3031",
+        "RMX3350"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA619",
+      "oppoModel": [
+        "RMX2205"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {  
+      "ifaaModel": "realme-RA21615",
+      "oppoModel": [
+        "RMX3366"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+   {
+      "ifaaModel": "realme-RA21619",
+      "oppoModel": [
+        "RMX3370",
+        "RMX3371",
+        "RMX3372"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA21604",
+      "oppoModel": [
+        "RMX3361",
+        "RMX3362"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R2169E",
+      "oppoModel": [
+        "RMX3392",
+        "RMX3393",
+        "RMX3395",
+        "RMX3396",
+        "RMX3686",
+        "RMX3687"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+     },
+    {
+      "ifaaModel": "realme-R21617",
+      "oppoModel": [
+        "RMX3310",
+        "RMX3311",
+        "RMX3312"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R9751",
+      "oppoModel": [
+         "RMX2051",
+         "RMX2025",
+         "RMX2141",
+         "RMX2142",
+         "RMX2052",
+         "RMX2144"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21631",
+      "oppoModel": [
+         "RMX3300",
+         "RMX3301"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21605",
+      "oppoModel": [
+         "RMX3551",
+         "RMX3552",
+         "RMX3555",
+         "RMX3556",
+         "RMX3706",
+         "RMX3709",
+         "RMX3708"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21629",
+      "oppoModel": [
+         "RMX3471",
+         "RMX3472",
+         "RMX3473",
+         "RMX3474",
+         "RMX3475",
+         "RMX3478"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA643",
+      "oppoModel": [
+        "RMX3461",
+        "RMX3462",
+        "RMX3463"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21642",
+      "oppoModel": [
+        "RMX3560",
+        "RMX3561",
+        "RMX3562",
+        "RMX3563",
+        "RMX3564"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R2163B",
+      "oppoModel": [
+        "RMX3575",
+        "RMX3571",
+        "RMX3572",
+        "RMX3574",
+        "RMX3576"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R22602",
+      "oppoModel": [
+        "RMX3660",
+        "RMX3661",
+        "RMX3663"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    }
+  ],
+  "confidential": [
+    {
+      "ifaaModel": "realme-R9795",
+      "oppoModel": [
+        "RMX2071",
+        "RMX2072",
+        "RMX2073",
+        "RMX2075",
+        "RMX2076"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA601",
+      "oppoModel": [
+        "PEGM00",
+        "PEGT00"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA631",
+      "oppoModel": [
+        "RMX2175",
+        "RMX2176",
+        "RMX2173",
+        "RMX2174",
+        "RMX2179",
+        "RMX3091",
+        "RMX3092",
+        "RMX3093",
+        "RMX2177"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA611",
+      "oppoModel": [
+        "RMX2111",
+        "RMX2112",
+        "RMX2117"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA645",
+      "oppoModel": [
+        "RMX3115",
+        "RMX3116",
+        "RMX3117",
+        "RMX3118"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R9751",
+      "oppoModel": [
+         "RMX2051",
+         "RMX2025",
+         "RMX2141",
+         "RMX2142",
+         "RMX2052",
+         "RMX2144"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA651",
+      "oppoModel": [
+        "RMX3121",
+        "RMX3122",
+        "RMX3123",
+        "RMX3052",
+        "RMX3041",
+        "RMX3042",
+        "RMX3043",
+        "RMX3241",
+        "RMX3381",
+        "RMX3242"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA669",
+      "oppoModel": [
+        "RMX3161"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA21651",
+      "oppoModel": [
+        "RMX3357"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA615",
+      "oppoModel": [
+        "RMX3031",
+        "RMX3350"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA619",
+      "oppoModel": [
+        "RMX2205"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {  
+      "ifaaModel": "realme-RA21615",
+      "oppoModel": [
+        "RMX3366"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+   {
+      "ifaaModel": "realme-RA21619",
+      "oppoModel": [
+        "RMX3370",
+        "RMX3371",
+        "RMX3372"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+   {
+      "ifaaModel": "realme-RA21604",
+      "oppoModel": [
+        "RMX3361",
+        "RMX3362"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R2169E",
+      "oppoModel": [
+        "RMX3392",
+        "RMX3393",
+        "RMX3395",
+        "RMX3396",
+        "RMX3686",
+        "RMX3687"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+     },
+    {
+      "ifaaModel": "realme-R21617",
+      "oppoModel": [
+        "RMX3310",
+        "RMX3311",
+        "RMX3312"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA702",
+      "oppoModel": [
+        "RMX2202",
+        "RMX3220",
+        "RMX3221"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21631",
+      "oppoModel": [
+         "RMX3300",
+         "RMX3301"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21605",
+      "oppoModel": [
+         "RMX3551",
+         "RMX3552",
+         "RMX3555",
+         "RMX3556",
+         "RMX3706",
+         "RMX3709",
+         "RMX3708"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21629",
+      "oppoModel": [
+         "RMX3471",
+         "RMX3472",
+         "RMX3473",
+         "RMX3474",
+         "RMX3475",
+         "RMX3478"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-RA643",
+      "oppoModel": [
+        "RMX3461",
+        "RMX3462",
+        "RMX3463"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R21642",
+      "oppoModel": [
+        "RMX3560",
+        "RMX3561",
+        "RMX3562",
+        "RMX3563",
+        "RMX3564"
+      ],
+      "bioType": [
+        "optical_fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R2163B",
+      "oppoModel": [
+        "RMX3575",
+        "RMX3571",
+        "RMX3572",
+        "RMX3574",
+        "RMX3576"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    },
+    {
+      "ifaaModel": "realme-R22602",
+      "oppoModel": [
+        "RMX3660",
+        "RMX3661",
+        "RMX3663"
+      ],
+      "bioType": [
+        "fingerprint"
+      ],
+      "ifaaVersion": "4"
+    }
+  ]
+}

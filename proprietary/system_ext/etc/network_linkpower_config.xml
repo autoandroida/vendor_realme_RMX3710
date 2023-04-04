@@ -1,0 +1,56 @@
+<!-- OPLUS_FEATURE_LINKPOWER -->
+<!-- Asiga@NETWORK.POWER.3327896, 2022-08-01. -->
+<LinkPower>
+    <LinkPowerVersion>20200430</LinkPowerVersion>
+
+    <MonitorService>
+        <version>20200430</version>
+        <monitor_enabled>true</monitor_enabled>
+    </MonitorService>
+
+    <JudgeService>
+        <juege_switch>1</juege_switch>
+        <rule_version>20200430</rule_version>
+        <rule id = "1">
+            <rule_name>freeze</rule_name>
+            <action_name>data_app_request_freeze</action_name>
+            <priority_id>20</priority_id>
+            <time_gap>0</time_gap>
+            <rule_args>level:100;delay_time:0</rule_args>
+            <comm_scene>
+                <scene id = "0">
+                    <event_id>1001</event_id>
+                    <event_state>in</event_state>
+                    <scene_timer>300</scene_timer>
+                </scene>
+            </comm_scene>
+            <AppThreshold>
+                <app_type id = "white_list">
+                    <white_app>allApp,0</white_app>
+                </app_type>
+            </AppThreshold>
+            <monitor_scene id = "1">
+                <monitor id = "1">
+                    <monitor_event>data_re_in_wakeup</monitor_event>
+                    <monitor_appname>com.xunmeng.pinduoduo</monitor_appname>
+                    <time_continued>270</time_continued>
+                    <count_downlimit>15</count_downlimit>
+                </monitor>
+                <monitor id = "2">
+                    <monitor_event>data_re_out_wakeup</monitor_event>
+                    <monitor_appname>com.xunmeng.pinduoduo</monitor_appname>
+                    <time_continued>270</time_continued>
+                    <count_downlimit>15</count_downlimit>
+                </monitor>
+            </monitor_scene>
+        </rule>
+    </JudgeService>
+
+    <DancerService>
+        <version>20200430</version>
+        <action id = "1">
+            <name>data_app_request_freeze</name>
+            <enable>true</enable>
+        </action>
+    </DancerService>
+</LinkPower>

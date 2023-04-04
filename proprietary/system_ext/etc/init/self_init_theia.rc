@@ -1,0 +1,50 @@
+##########################################################
+# Copyright (C), 2008-2018, OPLUS Mobile Comm Corp., Ltd
+# OPLUS_FEATURE_THEIA
+# File: init.oplus.se.rc
+#
+# Description:
+#	Definitions for theia service.
+#
+# Version: 1.0
+# Date created: 2019/11/25
+# Author: Gang.Yang
+#
+# --------------------------- Revision History: ------------------------------------
+# <version>		<date>		<author>		<desc>
+# Revision 1.0		2019/11/25	Gang.Yang       	Created
+#######################################################
+
+#ifdef OPLUS_FEATURE_THEIA
+#Gang.Yang, 2019/11/08, Add for record theia events
+
+service oplus_theias /system/system_ext/bin/oplus_theia
+    class late_start
+    user system
+    group root system
+    socket theia_socket stream 666 system system
+
+on post-fs-data
+    mkdir /data/persist_log/DCS/de/theia 0777 system system
+    mkdir /data/persist_log/DCS/en/theia 0777 system system
+    mkdir /data/persist_log/theia        0777 system system
+# endif /* OPLUS_FEATURE_THEIA */
+
+#ifdef OPLUS_FEATURE_THEIA
+#Taiyu.Li@BSP.Kernel_platform 2022/05/30 modify for theia3.0
+on property:sys.boot_completed=1
+    write /proc/pwkMonitorParam " boot-completed 1"
+#endif /* OPLUS_FEATURE_THEIA */
+
+on boot
+#ifdef OPLUS_FEATURE_THEIA
+#Fuchun.Liao@BSP.CHG.Basic 2019/09/30 modify for enable pmicwd
+    write /proc/pmicWd "1 254 7"
+#endif /* OPLUS_FEATURE_THEIA */
+#ifdef OPLUS_FEATURE_ACM
+#Yuwei.Guan@BSP.Kernel.FS,2020/07/08, Add for acm
+	chmod 0666 /dev/acm
+#endif /* OPLUS_FEATURE_ACM */
+
+on kick-init-watchdog
+    write /proc/oplus_init_watchdog/kick "kick"

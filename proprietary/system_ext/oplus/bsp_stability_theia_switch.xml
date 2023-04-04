@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<filter-conf>
+    <version>2021091002</version>
+    <isOpen>1</isOpen>
+    <filter-name>bsp_stability_theia_switch</filter-name>
+    <backKey>0</backKey>
+    <bootFailed>0</bootFailed>
+    <appNotResponding>0</appNotResponding>
+    <uiTimeout>1</uiTimeout>
+    <noFocusWindow>1</noFocusWindow>
+    <noFocusWindowToAnr enable="1">
+        <!-- NofocusAnr timeout, unit is ms -->
+        <NofocusAnrTimeout>12000</NofocusAnrTimeout>
+        <toAnrWhiteList>
+            <!-- whitelist, whole or part of package/activity name -->
+            <app name="keyguard" />
+            <app name="systemui" />
+            <app name="com.android.cts" />
+            <app name="LoginActivity" />
+            <app name="ScreenActivity" />
+            <app name="launcher" />
+            <app name="MMIDialogActivity" />
+            <app name="com.qualtop.am" />
+            <app name="com.example.helloworld" />
+            <app name="com.store.android.ui.SplashActivity" />
+            <app name="ru.yandex.taxi/.activity.startactivity" />
+            <app name="ru.yandex.taxi/.activity.MainActivity" />
+            <app name="ru.yandex.uber_kz/ru.yandex.taxi.activity.StartActivity" />
+            <app name="ru.yandex.uber_kz/ru.yandex.taxi.activity.MainActivity" />
+            <!-- <app name="com.oppotest.test1" /> -->
+        </toAnrWhiteList>
+    </noFocusWindowToAnr>
+    <uiTimeoutToKill enable="1">
+        <UITimeoutKillThreshold>10000</UITimeoutKillThreshold>
+        <uiTimeoutKillWhiteList>
+        <!-- whitelist -->
+        <utk_whitelist_app name="android.server.wm.app" />
+        <utk_whitelist_app name="android.camera.cts" />
+        <utk_whitelist_app name="android.media.cts" />
+        <utk_whitelist_app name="android.opengl.cts" />
+        <utk_whitelist_app name="com.facebook.katana" />
+        <utk_whitelist_app name="com.facebook.orca" />
+        <utk_whitelist_app name="com.grindrapp.android" />
+        <utk_whitelist_app name="com.ztgame.yyzy" />
+        <utk_whitelist_app name="com.instagram.android" />
+        <utk_whitelist_app name="com.smart.consumer.app" />
+        <utk_whitelist_app name="com.yyzy.nearme.gamecenter" />
+        <!-- <utk_whitelist_app name="com.oplustest.test1" /> -->
+        </uiTimeoutKillWhiteList>
+    </uiTimeoutToKill>
+    <userPanicMinInterval>30000</userPanicMinInterval>
+    <appBootTimeoutEvent>0</appBootTimeoutEvent>
+    <activityPauseTimedoutEvent>0</activityPauseTimedoutEvent>
+    <transparentWindowEvent>0</transparentWindowEvent>
+    <transitionTimeoutEvent>1</transitionTimeoutEvent>
+    <winDrawTimeoutEvent>0</winDrawTimeoutEvent>
+    <halfWatchdogEvent>1</halfWatchdogEvent>
+    <launcherCrashEvent>1</launcherCrashEvent>
+    <launcherAnrEvent>1</launcherAnrEvent>
+    <systemuiCrashEvent>1</systemuiCrashEvent>
+    <commonAppCrashEvent>1</commonAppCrashEvent>
+    <commonAppAnrEvent>1</commonAppAnrEvent>
+    <systemuiAnrEvent>1</systemuiAnrEvent>
+    <screenFreezeTimeoutEvent>1</screenFreezeTimeoutEvent>
+    <eyeFrameworkBlockEvent>1</eyeFrameworkBlockEvent>
+    <eyeFrameworkBlockInterval>6000</eyeFrameworkBlockInterval>
+    <backKeyEvent>0</backKeyEvent>
+    <powerKeyEvent>0</powerKeyEvent>
+    <homeKeyEvent>0</homeKeyEvent>
+    <pointEvent>0</pointEvent>
+    <screenShotEvent>0</screenShotEvent>
+    <systemuiUiTimeoutStatusBarEvent>1</systemuiUiTimeoutStatusBarEvent>
+    <systemuiUiTimeoutWhenUnlockEvent>1</systemuiUiTimeoutWhenUnlockEvent>
+    <systemuiHungWhenUnlockEvent>1</systemuiHungWhenUnlockEvent>
+</filter-conf>

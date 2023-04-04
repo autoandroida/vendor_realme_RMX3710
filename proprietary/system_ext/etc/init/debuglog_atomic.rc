@@ -1,0 +1,90 @@
+##################################################################################
+### Copyright 2014 OPLUS Mobile Comm Corp., Ltd.
+### All rights reserved.
+###
+### Description     : Provide a function to atomic log service
+### History          :( ID, Date, Author, Description)
+### Author: Chunbo.Gao@ANDROID.DEBUG
+##################################################################################
+
+#Yujie.Che@ANDROID.DEBUG, 2021/01/06, Add for main,event,radio,kernel,anr,dropbox log.
+service atomic_log_main /system/system_ext/bin/debuglog_atomic.sh "atomic_log_main"
+    class core
+    user system
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service atomic_log_event /system/system_ext/bin/debuglog_atomic.sh "atomic_log_event"
+     class core
+     user system
+     group root system sdcard_rw
+     disabled
+     oneshot
+
+service atomic_log_radio /system/system_ext/bin/debuglog_atomic.sh "atomic_log_radio"
+    class core
+    user system
+    group root system sdcard_rw
+    disabled
+    oneshot
+
+service atomic_log_kernel /system/system_ext/bin/debuglog_atomic.sh "atomic_log_kernel"
+    class core
+    user root
+    group root system sdcard_rw shell
+    disabled
+    oneshot
+
+service atomic_log_anr /system/system_ext/bin/debuglog_atomic.sh "atomic_log_anr"
+    class core
+    user system
+    group root system sdcard_rw
+    seclabel u:r:dumpstate:s0
+    disabled
+    oneshot
+
+service atomic_log_dropbox /system/system_ext/bin/debuglog_atomic.sh "atomic_log_dropbox"
+    class core
+    user system
+    group root system sdcard_rw
+    disabled
+    oneshot
+#endif
+
+service atomic_log_bootloader /system/system_ext/bin/debuglog_atomic.sh "atomic_log_bootloader"
+    class core
+    user system
+    group root system
+    disabled
+    oneshot
+
+service atomic_log_recovery /system/system_ext/bin/debuglog_atomic.sh "atomic_log_recovery"
+    class core
+    user system
+    group system root everybody cache
+    seclabel u:r:mvrecoverylog:s0
+    disabled
+    oneshot
+
+service atomic_log_qsee /system/system_ext/bin/debuglog_atomic.sh "atomic_log_qsee"
+    class core
+    user system
+    group root system
+    disabled
+    oneshot
+
+service transfer_mtk_log /system/system_ext/bin/debuglog_atomic.sh "transfer_mtk_log"
+    class core
+    user system
+    group root system shell log
+    disabled
+    oneshot
+
+service clear_atomic_log /system/system_ext/bin/debuglog_atomic.sh "clear_atomic_log"
+    class core
+    user system
+    group root system shell log
+    disabled
+    oneshot
+

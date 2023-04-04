@@ -1,0 +1,248 @@
+
+#================================connectivity wifi related start========================================
+#ifdef OPLUS_FEATURE_WIFI_DUMP
+#JiaoBo.Wang@CONNECTIVITY.WIFI.BASIC.LOG.1162003, 2018/7/02
+#add for wifi dump related log collection and DCS handle, dynamic enable/disable wifi core dump, offer trigger wifi dump API.
+#persist.vendor.connsys.coredump.mode set to enable/disable mtk coredump
+on property:sys.oplus.wifi.dump.mode=*
+    setprop persist.vendor.connsys.coredump.mode ${sys.oplus.wifi.dump.mode}
+
+#detected wifi dump trigger by firmware, touch finish file to notify framework
+on property:vendor.oplus.wifi.dump.failureDesc=*
+    setprop sys.oplus.wifi.dump.failureDesc ${vendor.oplus.wifi.dump.failureDesc}
+
+on property:vendor.oplus.wifi.dump.status=1
+    start touchwifidumpfinishfile
+    setprop vendor.oplus.wifi.dump.status 0
+
+on property:sys.oplus.wifi.dump.enable=1
+    start enablewifidump
+
+on property:sys.oplus.wifi.dump.enable=0
+    start disablewifidump
+
+on property:sys.oplus.wifi.dump.logcollect=1
+    start collectwifidmesg
+
+on property:sys.oplus.wifi.dump.trigger=1
+    start triggerwifidump
+
+service touchwifidumpfinishfile /system_ext/bin/init.sys.oplus.wifi.debug.sh "touchwifidumpfinishfile"
+    class core
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+service enablewifidump /system_ext/bin/init.sys.oplus.wifi.debug.sh "enablewifidump"
+    class core
+    user root
+    group root system misc wifi
+    disabled
+    oneshot
+
+service disablewifidump /system_ext/bin/init.sys.oplus.wifi.debug.sh "disablewifidump"
+    class core
+    user root
+    group root system misc wifi
+    disabled
+    oneshot
+
+service collectwifidmesg /system_ext/bin/init.sys.oplus.wifi.debug.sh "collectwifidmesg"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+service triggerwifidump /system_ext/bin/init.sys.oplus.wifi.debug.sh "triggerwifidump"
+    class main
+    user system
+    group wifi system misc
+    disabled
+    oneshot
+#endif /* OPLUS_FEATURE_WIFI_DUMP */
+
+#ifdef OPLUS_FEATURE_WIFI_SMARTANTENNA
+#bingham.fang@CONNECTIVITY.WIFI.HARDWARE.SMARTANTENNA.4457253, 2022/09/19, Add for wifi smart antenna
+on property:ro.oplus.wifi.wsa=*
+    setprop ro.vendor.oplus.wifi.wsa ${ro.oplus.wifi.wsa}
+#endif /* OPLUS_FEATURE_WIFI_SMARTANTENNA */
+
+#ifdef OPLUS_FEATURE_WIFI_RUSUPGRADE
+#JiaoBo@CONNECTIVITY.WIFI.BASIC.HARDWARE.2795386, 2020/02/20
+#add for: support auto update function, include mtk fw, mtk wifi.cfg, qcom fw, qcom bdf, qcom ini
+#create and copy to temp rus dir
+on property:sys.oplus.wifi.rus.upgrade.ctl=1
+    start rusWifiFileTransfer
+
+service rusWifiFileTransfer /system_ext/bin/init.sys.oplus.wifi.RusUpgrade.sh rusWifiFileTransfer
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+#bootup check
+on property:vendor.oplus.wifi.rus.upgrade.ctl=vendor-bootcheck-done
+    start rusWifiBootCheck
+
+service rusWifiBootCheck /system_ext/bin/init.sys.oplus.wifi.RusUpgrade.sh rusWifiBootCheck
+    class main
+    user system
+    group root system misc wifi
+    oneshot
+
+#single entity(objs) upgrade
+on property:vendor.oplus.wifi.rus.upgrade.ctl=vendor-upgradeCheck-done
+    start rusWifiObjsUpgrade
+
+service rusWifiObjsUpgrade /system_ext/bin/init.sys.oplus.wifi.RusUpgrade.sh rusWifiObjsUpgrade
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+#endif /* OPLUS_FEATURE_WIFI_RUSUPGRADE */
+
+
+#ifdef OPLUS_FEATURE_WIFI_SWITCH
+#JiaoBo@CONNECTIVITY.WIFI.BASIC.SWITCH.1069763, 2020/02/20, Add for collect wifi switch log
+service collectWifiSwitchLog /system_ext/bin/init.sys.oplus.wifi.debug.sh "collectWifiSwitchLog"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+service packWifiSwitchLog /system_ext/bin/init.sys.oplus.wifi.debug.sh "packWifiSwitchLog"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+on property:sys.oplus.wifi.switch.log.ctl=1
+    start collectWifiSwitchLog
+
+on property:sys.oplus.wifi.switch.log.ctl=2
+    stop collectWifiSwitchLog
+
+on property:sys.oplus.wifi.switch.log.ctl=3
+    start packWifiSwitchLog
+#endif /* OPLUS_FEATURE_WIFI_SWITCH */
+#================================connectivity wifi related end==========================================
+
+#================================connectivity bt related start==========================================
+
+
+# ifdef OPLUS_FEATURE_BT_HCI_LOG
+# Laixin@CONNECTIVITY.BT.Basic.Log.70745, add for auto capture hci log
+service countCachedHciLog /system/system_ext/bin/init.sys.oplus.bt.debug.sh "countCachedHciLog"
+    class main
+    user bluetooth
+    group system
+    disabled
+    oneshot
+
+service uploadCachedHciLog /system/system_ext/bin/init.sys.oplus.bt.debug.sh "uploadCachedHciLog"
+    class main
+    user bluetooth
+    group system
+    disabled
+    oneshot
+
+service collectSnoopLogcat /system/system_ext/bin/init.sys.oplus.bt.debug.sh "collectSnoopLogcat"
+    class main
+    user bluetooth
+    group system
+    disabled
+    oneshot
+
+on property:sys.oplus.bt.count_cache_hcilog=1
+    start countCachedHciLog
+
+on property:sys.oplus.bt.collect_snoop_logcat=1
+    start collectSnoopLogcat
+
+service collectSSRDumpLogcat /system/system_ext/bin/init.sys.oplus.bt.debug.sh "collectSSRDumpLogcat"
+    class main
+    user system
+    group system root bluetooth
+    disabled
+    oneshot
+
+service uploadBtSSRDump /system/system_ext/bin/init.sys.oplus.bt.debug.sh "uploadBtSSRDump"
+    class main
+    user system
+    group system root bluetooth
+    disabled
+    oneshot
+
+on property:sys.oplus.bt.collect_bt_ssrdump=1
+    stop collectSSRDumpLogcat
+    start uploadBtSSRDump
+
+on post-fs-data
+    mkdir /data/persist_log/DCS/de/network_logs 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs 0777 system system
+    mkdir /data/misc/bluetooth/cached_hci 0770 bluetooth bluetooth
+    mkdir /data/misc/bluetooth/bt_fw_dump 0770 bluetooth bluetooth
+    mkdir /data/persist_log/DCS/de/network_logs/bt_hci_log 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/bt_hci_log 0777 system system
+    mkdir /data/persist_log/DCS/de/network_logs/bt_fw_dump 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/bt_fw_dump 0777 system system
+    # ifdef OPLUS_FEATURE_BT_SWITCH_LOG
+    # YangQiang@CONNECTIVITY.BT.Basic.Log.490661, 2020/11/20, add for auto capture switch log
+    mkdir /data/misc/bluetooth/bt_switch_log 0770 bluetooth bluetooth
+    mkdir /data/persist_log/DCS/de/network_logs/bt_switch_log 0777 system system
+    mkdir /data/persist_log/DCS/en/network_logs/bt_switch_log 0777 system system
+    # endif /* OPLUS_FEATURE_BT_SWITCH_LOG */
+    #ifdef OPLUS_FEATURE_LOG_COLLECTION
+    #ZhengZhou@CN.NFC.Basic.Log.2948804, 2020/05/20, Add for nfc log
+    mkdir /data/persist_log/DCS/en/nfc 0777 system system
+    mkdir /data/persist_log/DCS/de/nfc 0777 system system
+    #endif /* OPLUS_FEATURE_LOG_COLLECTION */
+    #ifdef OPLUS_FEATURE_LOG_COLLECTION
+    #Shiminghao@CONNECTIVITY.GPS.DCS.3706888, 2022/05/24, Add for GPS DCS log
+    mkdir /data/persist_log/DCS/de/gps 0777 system system
+    mkdir /data/persist_log/DCS/en/gps 0777 system system
+    #endif /* OPLUS_FEATURE_LOG_COLLECTION */
+    chmod 777 /data/vendor/ssrdump/
+# endif /* OPLUS_FEATURE_BT_HCI_LOG */
+
+service factory_rm_bt_cfg /system/system_ext/bin/init.sys.oplus.bt.debug.sh "factory_rm_bt_cfg"
+    class main
+    user bluetooth
+    group root system misc bluetooth
+    disabled
+    oneshot
+
+# ifdef OPLUS_FEATURE_BT_SWITCH_LOG
+# YangQiang@CONNECTIVITY.BT.Basic.Log.490661, 2020/11/20, add for auto capture switch log
+service collectBtSwitchLog /system/system_ext/bin/init.sys.oplus.bt.debug.sh "collectBtSwitchLog"
+    class main
+    user bluetooth
+    group root system misc bluetooth
+    disabled
+    oneshot
+
+service packBtSwitchLog /system/system_ext/bin/init.sys.oplus.bt.debug.sh "packBtSwitchLog"
+    class main
+    user bluetooth
+    group root system misc bluetooth
+    disabled
+    oneshot
+
+on property:sys.oplus.bt.switch.log.ctl=1
+    start collectBtSwitchLog
+
+on property:sys.oplus.bt.switch.log.ctl=2
+    stop collectBtSwitchLog
+
+on property:sys.oplus.bt.switch.log.ctl=3
+    start packBtSwitchLog
+
+# endif /* OPLUS_FEATURE_BT_SWITCH_LOG */
+#================================connectivity bt related end ===========================================
+

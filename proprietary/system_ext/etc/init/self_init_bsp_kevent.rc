@@ -1,0 +1,27 @@
+##########################################################
+# Copyright (C), 2008-2018, OPLUS Mobile Comm Corp., Ltd
+# 
+# File: self_init_bsp_kevent.rc
+#
+# Description:
+#	Definitions for bsp_kevent rc
+#
+# Version: 1.0
+# Date created: 2020/02/02
+# Author: tangjh@PSW.BSP.SENSOR
+#
+# --------------------------- Revision History: ------------------------------------
+# <version>		<date>		<author>		<desc>
+# Revision 1.0		2020/02/02	tangjh@PSW.BSP.SENSOR	Created
+#######################################################
+
+
+on post-fs-data
+    mkdir /data/oplus/bsp_kevent 0775 system system
+    mkdir /data/persist_log/DCS/kevent 0777 system system
+
+service bsp_kevent /system/system_ext/bin/bsp_kevent
+    class late_start
+    user system
+    group root system
+
